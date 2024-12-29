@@ -6,6 +6,21 @@ I try my best to label everything so newcomers can understand what's going on. B
 
 Keep in mind that nothing here is final. I often change my mind on what these abstractions should be called. Sometimes I change my mind on the entirety of how these abstractions should work. Know that everything in this repository can **and will** change over time.
 
+## How to install
+
+### Linux & MacOS
+
+Download the repository:
+
+```
+mkdir -p ~/Documents/Pd/path/sq
+cd ~/Documents/Pd/path/sq
+git clone https://github.com/sq1000000/PD-path.git .
+```
+Add the path to Purr Data:
+
+Edit > Settings > Startup > New Search Path > "~/Documents/Pd/path/" > Apply
+
 ## Custom Terminology
 
 One of the most annoying things while making these was seeing community-made PD files with zero explanation for what's actually happening inside the file. They're often unsorted and use words and dependencies I could never understand. I'm no exception. Throughout these patches, I use a lot of made up words. So here, I'll try to simplify some of the terms.
