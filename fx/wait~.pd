@@ -1,0 +1,67 @@
+#N canvas 1281 28 1279 1343 12;
+#X obj 200 200 inlet~;
+#X obj 200 1100 outlet~;
+#X obj 400 200 inlet;
+#X floatatom 400 430 0 0 0 0 - - -;
+#X obj 450 350 r window;
+#X floatatom 400 630 0 0 0 0 - - -;
+#X obj 400 600 r delay;
+#X obj 200 590 wrap~;
+#X obj 200 700 *~;
+#X obj 200 730 +~;
+#X msg 700 340 \; transpose 0 \; window 100 \; delay 0;
+#X obj 700 250 loadbang;
+#X obj 200 560 +~ 0.5;
+#X text 440 430 <--window (msec);
+#X obj 200 760 vd~ G09-del;
+#X obj 200 240 delwrite~ G09-del 5000;
+#X text 700 200 based on the G09.pitchshift PD example;
+#X text 430 630 delay (msec);
+#X text 700 500 yeah man idk how I got this working, f 42;
+#X obj 800 260 bng 39 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 700 300 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 800 340 \; transpose 0 \; window 0 \; delay 0;
+#X obj 400 500 sq/logic/smooth;
+#X obj 400 660 sq/logic/smooth;
+#X obj 230 1000 sq/logic/bypass~;
+#X obj 330 860 sq/if/equal_to;
+#X obj 370 910 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 480 784 float 0;
+#X obj 513 745 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 370 960 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 535 707 loadbang;
+#X text 700 600 future me PLEASEEE PLEASE PLEASE find a better way
+to do this \, this is so sloppy omg;
+#X text 200 100 this patch uhhmm delays the audio input by the milliseconds
+input;
+#X connect 0 0 15 0;
+#X connect 0 0 24 1;
+#X connect 2 0 3 0;
+#X connect 3 0 22 0;
+#X connect 3 0 25 1;
+#X connect 3 0 25 0;
+#X connect 4 0 3 0;
+#X connect 5 0 23 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 14 0;
+#X connect 11 0 20 0;
+#X connect 12 0 7 0;
+#X connect 14 0 24 0;
+#X connect 19 0 21 0;
+#X connect 20 0 10 0;
+#X connect 22 0 8 1;
+#X connect 23 0 9 1;
+#X connect 24 0 1 0;
+#X connect 25 0 26 0;
+#X connect 26 0 29 0;
+#X connect 27 0 25 2;
+#X connect 28 0 27 0;
+#X connect 29 0 24 2;
+#X connect 30 0 28 0;

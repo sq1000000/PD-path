@@ -1,0 +1,82 @@
+#N canvas 10 35 2540 1285 10;
+#X obj 550 400 gemhead;
+#X obj 640 540 *~;
+#X obj 680 540 *~;
+#X obj 600 580 scopeXYZ~ 1024;
+#X obj 550 430 color 0 1 0;
+#X obj 740 330 vsl 15 128 0 40 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 3175 1;
+#X text 770 370 size;
+#X msg 412 334 draw line;
+#X msg 412 374 draw fill;
+#X msg 412 311 draw point;
+#X msg 412 354 draw linestrip;
+#X msg 412 394 draw tri;
+#X msg 412 416 draw tristrip;
+#X msg 411 439 draw trifan;
+#X msg 411 460 draw quad;
+#X msg 411 482 draw quadstrip;
+#X obj 352 281 loadbang;
+#X text 200 200 An oscilloscope \, based on Jerobeam Fendersons 'lil
+scope'. See more at jerobeamfenderson.net;
+#X obj 740 290 loadbang;
+#X obj 640 100 inlet~;
+#X obj 680 80 inlet~;
+#X obj 1000 470 gemwin;
+#X msg 1060 400 create \, 1;
+#X msg 1000 400 destroy;
+#X obj 900 370 loadbang;
+#X msg 900 400 frame 60;
+#X obj 1040 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1000 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 1000 340 route 0;
+#X obj 1000 310 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X floatatom 740 470 5 0 0 0 - - -, f 5;
+#X obj 1000 280 inlet;
+#X text 200 100 this is a tool to compare two audio signals with an
+oscilloscope. The tool accepts a toggle to turn on and off the oscilloscope
+window;
+#X obj 740 310 float 10;
+#X obj 2900 1700 f;
+#X obj 700 200 outlet~;
+#X obj 750 200 outlet~;
+#X obj 1105 214 outlet;
+#X text 810 200 <- I thought it would be nice if this abstraction had
+passthrough outlets -------------------------->;
+#X connect 0 0 4 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 2;
+#X connect 4 0 3 0;
+#X connect 5 0 30 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 13 0 3 0;
+#X connect 14 0 3 0;
+#X connect 15 0 3 0;
+#X connect 16 0 10 0;
+#X connect 18 0 33 0;
+#X connect 19 0 1 0;
+#X connect 19 0 35 0;
+#X connect 20 0 2 0;
+#X connect 20 0 36 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 21 0;
+#X connect 26 0 22 0;
+#X connect 27 0 23 0;
+#X connect 28 0 27 0;
+#X connect 28 1 26 0;
+#X connect 29 0 28 0;
+#X connect 30 0 2 1;
+#X connect 30 0 1 1;
+#X connect 31 0 29 0;
+#X connect 31 0 37 0;
+#X connect 33 0 5 0;

@@ -1,0 +1,52 @@
+#N canvas 1281 28 1279 665 10;
+#X obj 4628 831 f;
+#X obj 1898 2221 f;
+#X obj 200 680 outlet~;
+#X floatatom 200 300 5 0 0 0 - - -, f 5;
+#X obj 200 340 osc~;
+#X obj 200 380 *~;
+#X obj 200 460 +~;
+#X obj 200 500 osc~;
+#X text 230 460 Carrier;
+#X floatatom 240 420 5 0 0 1 Carr_Freq - -, f 5;
+#X obj 400 180 hsl 128 15 50 2000 0 0 empty empty empty -2 -8 0 10
+#a8ffab #000000 #000000 2100 1;
+#X obj 400 250 *;
+#X floatatom 600 220 5 0 0 0 - - -, f 5;
+#X obj 600 190 hsl 128 15 0 2 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 3850 1;
+#X text 240 320 Mod_Amp;
+#X text 400 480 tutorial: https://www.youtube.com/watch?v=RX3gD7Awrpc
+;
+#X obj 600 100 loadbang;
+#X obj 600 130 float 1;
+#X obj 400 100 inlet;
+#X obj 400 130 sq/logic/map 0 127 50 2000;
+#X obj 900 190 hsl 128 15 0 5000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 10300 1;
+#X floatatom 900 213 5 0 0 0 - - -, f 5;
+#X text 400 400 I originally intended for this to be an audio filter
+;
+#X obj 900 100 inlet;
+#X obj 900 125 sq/logic/map 0 127 0 5000;
+#X text 400 440 this doesn't sound very good \, but it works I guess
+haha;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 9 0 6 1;
+#X connect 10 0 11 0;
+#X connect 10 0 9 0;
+#X connect 11 0 3 0;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 18 0 19 0;
+#X connect 19 0 10 0;
+#X connect 20 0 21 0;
+#X connect 21 0 5 1;
+#X connect 23 0 24 0;
+#X connect 24 0 20 0;

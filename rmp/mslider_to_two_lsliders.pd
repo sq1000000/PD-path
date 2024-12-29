@@ -1,0 +1,32 @@
+#N canvas 1174 217 1080 995 10;
+#X obj 200 200 inlet;
+#X obj 600 680 outlet;
+#X floatatom 500 500 5 0 0 0 - - -, f 5;
+#X floatatom 200 500 5 0 0 0 - - -, f 5;
+#X obj 600 640 +;
+#X obj 200 700 outlet;
+#X obj 500 800 outlet;
+#X text 250 700 <- range of the first lslider (left side of the input
+mslider);
+#X text 550 800 <- range of the second lslider (right side of the input
+mslider);
+#X text 650 680 <- both lslider ranges (0 - 127 \, then 0 - 127 again)
+;
+#X obj 200 400 sq/rmp/map 0 64 127 0;
+#X obj 500 400 sq/rmp/map 64 127 0 127;
+#X text 300 140 a 'middle slider' is a slider where the head starts
+in the middle position (64) and can go down to 0 \, or up to 127;
+#X text 200 100 this abstraction uses two map abstractions to convert
+a middle slider range to two lslider ranges;
+#X text 400 180 essentially \, 64-0 makes makes the full range of the
+first lslider \, and 64-127 makes the full range of the second lslider
+;
+#X connect 0 0 10 0;
+#X connect 0 0 11 0;
+#X connect 2 0 4 1;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 10 0 3 0;
+#X connect 11 0 2 0;

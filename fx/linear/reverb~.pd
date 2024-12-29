@@ -1,0 +1,67 @@
+#N canvas 1143 28 1277 1343 10;
+#X obj 4628 831 f;
+#X obj 1898 2221 f;
+#X obj 400 400 inlet~;
+#X obj 400 1280 outlet~;
+#X obj 400 1120 freeverb~;
+#X msg 630 760 roomsize \$1;
+#X msg 800 760 damping \$1;
+#X msg 895 861 wet \$1;
+#X msg 930 900 dry \$1;
+#X msg 800 1120 freeze \$1;
+#X msg 800 1190 bypass \$1;
+#X obj 800 1103 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 53;
+#X obj 800 1173 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 109;
+#X obj 1000 800 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #00f8fc
+#000000 #000000 12700 1;
+#X floatatom 1000 820 5 0 0 0 - - -, f 5;
+#X obj 990 860 expr 1-$f1;
+#X obj 630 660 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #00fc04
+#000000 #000000 0 1;
+#X obj 800 660 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fc8000
+#000000 #000000 0 1;
+#X floatatom 800 680 5 0 0 0 - - -, f 5;
+#X floatatom 630 680 5 0 0 0 - - -, f 5;
+#X text 900 1120 Freeze the reverb;
+#X text 891 1199 the dry signal pass through.;
+#X text 1070 840 Wet signal to dry signal ratio;
+#X text 1070 856 (0 : all dry \, 1 : all wet);
+#X text 850 680 Damping level;
+#X text 680 680 Roomize;
+#X obj 1000 400 inlet;
+#X obj 800 610 sq/logic/map 0 127 0 1;
+#X obj 1000 700 sq/logic/map 0 127 0 0.8;
+#X text 890 1186 run the reverb off and let;
+#X obj 1000 500 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X text 400 300 reverb is generally one of those things you should
+have more than one parameter controlling. But if you want it all done
+in one knob \, here's the way to do it;
+#X text 800 1050 extra stuff:;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 9 0;
+#X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 14 0 8 0;
+#X connect 14 0 7 0;
+#X connect 15 0 8 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 6 0;
+#X connect 19 0 5 0;
+#X connect 26 0 30 0;
+#X connect 27 0 16 0;
+#X connect 27 0 17 0;
+#X connect 28 0 13 0;
+#X connect 30 0 27 0;
+#X connect 30 0 28 0;

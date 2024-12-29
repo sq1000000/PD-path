@@ -1,0 +1,10 @@
+#N canvas 641 28 1279 1343 10;
+#X obj 1898 21 f;
+#X obj 9095 -3242 f;
+#X obj 8571 -1447 f;
+#X obj 3631 923 f;
+#X obj 200 -2600 outlet~;
+#X obj 200 -2900 noise~;
+#X obj 200 -2800 bp~ 1250 0.83;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;

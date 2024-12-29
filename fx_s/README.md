@@ -1,0 +1,1 @@
+This folder is a set of tools to apply stereo effect to incoming audio signals. I try to keep all my effects in sq/fx, but I keep them all mono. All the effects that NEED to be stereo, I usually keep right here in sq/fx_s

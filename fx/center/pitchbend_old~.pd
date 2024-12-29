@@ -1,0 +1,124 @@
+#N canvas 641 28 1279 1343 12;
+#X obj 100 100 inlet~;
+#X obj 100 1000 outlet~;
+#X obj 300 100 inlet;
+#X floatatom 100 270 0 0 0 0 - - -;
+#X obj 160 560 *~;
+#X obj 280 510 line~;
+#X floatatom 300 330 0 0 0 0 - - -;
+#X obj 280 470 pack 0 200;
+#X obj 300 300 r window;
+#X obj 100 240 r transpose;
+#X obj 100 330 exp;
+#X floatatom 100 360 6 0 0 1 speed_change - -, f 6;
+#X obj 100 450 /;
+#X obj 240 390 * 0.001;
+#X obj 400 570 line~;
+#X obj 400 540 pack 0 200;
+#X floatatom 400 450 0 0 0 0 - - -;
+#X obj 400 420 r delay;
+#X obj 160 590 +~;
+#X obj 100 620 cos~;
+#X obj 100 650 *~;
+#X obj 100 700 +~;
+#X obj 190 540 wrap~;
+#X obj 330 570 *~;
+#X obj 330 600 +~;
+#X obj 260 630 cos~;
+#X obj 260 660 *~;
+#X msg 600 240 \; transpose 0 \; window 100 \; delay 0;
+#X obj 600 200 loadbang;
+#X obj 240 420 t b f;
+#X floatatom 100 480 6 0 0 1 rotation_freq - -, f 6;
+#X obj 190 510 +~ 0.5;
+#X obj 100 560 -~ 0.5;
+#X obj 100 590 *~ 0.5;
+#X obj 260 570 -~ 0.5;
+#X obj 260 600 *~ 0.5;
+#X obj 100 390 - 1;
+#X obj 100 300 * 0.05776;
+#X obj 100 420 * -1;
+#X text 340 330 <--window (msec);
+#X text 140 450 tape head;
+#X obj 100 520 phasor~;
+#X obj 400 480 max 1.5;
+#X obj 160 620 vd~ G09-del;
+#X obj 330 630 vd~ G09-del;
+#X obj 100 140 delwrite~ G09-del 5000;
+#X text 590 360 This is a classic rotating-tape-head style pitch shifter
+using the [vd~] variable delay object. Ther are two moving tape heads
+\, each of which is loudest at the middle of its trajectory \, and
+enveloped out at the moment it has to jump back (or forward) to start
+another scratch. Most of the brain work is in computing how fast the
+tape heads have to move to get the desired transposition.;
+#X text 590 480 The "window size" is the total trajectory of the read
+points in the delay line \, in milliseconds. The delay times are controlled
+by a [phasor~] object. The second delay time \, 180 degrees out of
+phase from the first one \, is computed using the "wrap" object.;
+#X text 590 570 The "window size" is the total trajectory of the read
+points in the delay line \, in milliseconds. The delay times are controlled
+by a [phasor~] object. The second delay time \, 180 degrees out of
+phase from the first one \, is computed using the "wrap" object.;
+#X text 590 660 The [cos~] objects compute the fadein and fadeout of
+the two delay line outputs. They each traverse the positive half of
+the cosine waveform (phase -0.25 to +0.25) over the time the phase
+goes from one end to the other.;
+#X floatatom 300 160 5 0 0 0 - - -, f 5;
+#X text 600 100 based on the G09.pitchshift PD example;
+#X text 430 450 delay (msec);
+#X obj 300 360 max 0;
+#X text 170 270 <-- transposition (semitones);
+#X obj 300 130 sq/logic/map 0 127 -12 12;
+#X floatatom 400 510 5 0 0 0 - - -, f 5;
+#X connect 0 0 45 0;
+#X connect 2 0 55 0;
+#X connect 3 0 37 0;
+#X connect 4 0 18 0;
+#X connect 5 0 4 1;
+#X connect 5 0 23 1;
+#X connect 6 0 53 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 36 0;
+#X connect 12 0 30 0;
+#X connect 13 0 29 0;
+#X connect 14 0 18 1;
+#X connect 14 0 24 1;
+#X connect 15 0 14 0;
+#X connect 16 0 42 0;
+#X connect 17 0 16 0;
+#X connect 18 0 43 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 1 0;
+#X connect 22 0 23 0;
+#X connect 22 0 34 0;
+#X connect 23 0 24 0;
+#X connect 24 0 44 0;
+#X connect 25 0 26 0;
+#X connect 26 0 21 1;
+#X connect 28 0 27 0;
+#X connect 29 0 12 0;
+#X connect 29 1 12 1;
+#X connect 30 0 41 0;
+#X connect 31 0 22 0;
+#X connect 32 0 33 0;
+#X connect 33 0 19 0;
+#X connect 34 0 35 0;
+#X connect 35 0 25 0;
+#X connect 36 0 38 0;
+#X connect 37 0 10 0;
+#X connect 38 0 12 0;
+#X connect 41 0 4 0;
+#X connect 41 0 32 0;
+#X connect 41 0 31 0;
+#X connect 42 0 56 0;
+#X connect 43 0 20 1;
+#X connect 44 0 26 1;
+#X connect 50 0 3 0;
+#X connect 53 0 13 0;
+#X connect 53 0 7 0;
+#X connect 55 0 50 0;
+#X connect 56 0 15 0;

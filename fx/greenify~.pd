@@ -1,0 +1,9 @@
+#N canvas 641 28 1279 1343 10;
+#X obj 200 -2400 outlet~;
+#X obj 200 -2500 bp~ 1250 0.83;
+#X obj 200 -2600 inlet~;
+#X text 200 -2700 this simple filter thing applies the same "green"
+bandpass filter found in the sq/synth/noise/green~ noise generator.
+maybe it'll help incoming sounds sound more natural.;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;

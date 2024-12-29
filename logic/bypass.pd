@@ -1,0 +1,50 @@
+#N canvas 0 28 1278 1343 10;
+#X obj 1898 21 f;
+#X obj 480 -3060 inlet;
+#X floatatom 230 -2660 5 0 0 0 - - -, f 5;
+#X floatatom 330 -2660 5 0 0 0 - - -, f 5;
+#X obj 230 -2840 loadbang;
+#X obj 230 -2815 float 1;
+#X obj 9095 -3242 f;
+#X obj 8571 -1447 f;
+#X obj 3631 923 f;
+#X obj 480 -3030 hradio 15 0 0 2 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X msg 400 -2820 1;
+#X msg 440 -2820 0;
+#X msg 540 -2820 1;
+#X msg 500 -2820 0;
+#X obj 520 -2920 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 480 -2920 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 100 -3060 there's probably a better vanilla way to do this
+;
+#X text 100 -3100 use a toggle box to toggle between two audio sources
+;
+#X obj 480 -3000 route 0;
+#X obj 200 -3000 inlet;
+#X obj 300 -3000 inlet;
+#X obj 200 -2500 outlet;
+#X obj 200 -2620 *;
+#X obj 300 -2620 *;
+#X connect 1 0 9 0;
+#X connect 2 0 22 1;
+#X connect 3 0 23 1;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 9 0 18 0;
+#X connect 10 0 2 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 0;
+#X connect 13 0 2 0;
+#X connect 14 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 11 0;
+#X connect 15 0 10 0;
+#X connect 18 0 15 0;
+#X connect 18 1 14 0;
+#X connect 19 0 22 0;
+#X connect 20 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;

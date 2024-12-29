@@ -1,0 +1,22 @@
+#N canvas 182 149 1280 464 12;
+#X obj 310 240 vradio 15 0 0 2 empty empty select 20 7 0 8 #fcfcfc
+#000000 #000000 0;
+#X floatatom 100 170 5 0 0 0 - - -, f 5;
+#X floatatom 180 170 5 0 0 0 - - -, f 5;
+#X floatatom 100 390 5 0 0 0 - - -, f 5;
+#X obj 100 460 outlet;
+#X obj 100 320 mux 1 2;
+#X obj 100 100 inlet;
+#X obj 180 100 inlet;
+#X obj 290 140 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 250 90 inlet;
+#X connect 0 0 5 2;
+#X connect 1 0 5 0;
+#X connect 2 0 5 1;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 0;

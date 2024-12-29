@@ -1,0 +1,27 @@
+#N canvas 641 28 1279 1343 12;
+#X obj 200 700 outlet;
+#X floatatom 200 640 5 0 0 0 - - -, f 5;
+#X obj 200 500 random;
+#X obj 200 600 +;
+#X obj 200 300 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 500 200 inlet;
+#X obj 500 400 float \$1;
+#X obj 300 200 inlet;
+#X obj 300 400 float \$2;
+#X obj 400 300 loadbang;
+#X obj 200 200 inlet;
+#X text 200 100 inlets (from left to right):;
+#X text 200 140 trigger \, random_range_lowest \, random_range_highest
+;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 1;
+#X connect 7 0 8 0;
+#X connect 8 0 3 1;
+#X connect 9 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 4 0;

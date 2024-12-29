@@ -1,0 +1,47 @@
+#N canvas 216 241 980 776 12;
+#X obj 200 200 inlet;
+#X obj 300 200 inlet;
+#X obj 402 201 inlet;
+#X obj 300 400 clip;
+#X floatatom 300 250 5 0 0 0 - - -, f 5;
+#X floatatom 400 250 5 0 0 0 - - -, f 5;
+#X floatatom 200 250 5 0 0 0 - - -, f 5;
+#X floatatom 300 450 5 0 0 0 - - -, f 5;
+#X obj 200 500 sq/if/equal_to;
+#X obj 200 760 outlet;
+#X floatatom 200 660 5 0 0 0 - - -, f 5;
+#X obj 300 840 outlet;
+#X text 360 840 <-- toggles box if change has happened in X time;
+#X obj 200 600 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 300 660 5 0 0 0 - - -, f 5;
+#X obj 300 600 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 200 710 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 300 630 float 0;
+#X obj 200 630 float 1;
+#X obj 300 790 sq/rmp/bitflip;
+#X text 200 100 sends a toggle if the first inlet is in the range of
+the next two inlets;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 2;
+#X connect 6 0 3 0;
+#X connect 6 0 8 1;
+#X connect 6 0 8 0;
+#X connect 7 0 8 2;
+#X connect 8 0 13 0;
+#X connect 8 1 15 0;
+#X connect 10 0 16 0;
+#X connect 13 0 18 0;
+#X connect 14 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 9 0;
+#X connect 16 0 19 0;
+#X connect 17 0 14 0;
+#X connect 18 0 10 0;
+#X connect 19 0 11 0;

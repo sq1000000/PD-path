@@ -1,0 +1,40 @@
+#N canvas 10 35 2540 1288 10;
+#X obj 200 300 inlet;
+#X obj 360 300 inlet;
+#X obj 280 300 inlet;
+#X obj 440 300 inlet;
+#X obj 510 300 inlet;
+#X obj 200 600 outlet;
+#X obj 280 330 float \$1;
+#X obj 360 330 float \$2;
+#X obj 440 330 float \$3;
+#X obj 510 330 float \$4;
+#X text 400 500 by Adrian Rennertz;
+#X obj 500 200 loadbang;
+#X obj 200 370 expr if($f2 == $f3 \, -1 \, (((($f1-$f2) / ($f3-$f2))
+* ($f5-$f4)) + $f4)) \; $f4 \; $f5 \;;
+#X obj 200 500 limit;
+#X msg 500 460 0;
+#X text 200 100 inlets are (from left to right) input_value - input_range_low
+- input_range_high - output_range_low - output_range_high. low and
+high can be switched to invert the value. values that exceed the output
+range will output the treshold.;
+#X connect 0 0 12 0;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 8 0;
+#X connect 4 0 9 0;
+#X connect 6 0 12 1;
+#X connect 7 0 12 2;
+#X connect 8 0 12 3;
+#X connect 9 0 12 4;
+#X connect 11 0 9 0;
+#X connect 11 0 8 0;
+#X connect 11 0 7 0;
+#X connect 11 0 6 0;
+#X connect 11 0 14 0;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 13 0 5 0;
+#X connect 14 0 13 3;

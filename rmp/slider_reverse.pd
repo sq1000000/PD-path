@@ -1,0 +1,11 @@
+#N canvas 1285 35 1265 1285 10;
+#X obj 200 200 inlet;
+#X obj 200 400 outlet;
+#X obj 200 300 sq/rmp/map 0 127 127 0;
+#X text 300 200 the 'map' object isn't very lightweight \, but it gets
+the job done. maybe someday I'll make my own syntaxes for little remapping
+tasks like this one;
+#X text 200 100 this abstraction reverses slider values (which are
+usually 0 - 127);
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

@@ -1,0 +1,12 @@
+#N canvas 1285 35 1265 1285 12;
+#X obj 200 200 inlet;
+#X obj 200 600 outlet;
+#X text 200 100 literally the opposite effect of the if/even block
+;
+#X obj 200 300 sq/if/even;
+#X text 260 600 <- toggles if odd;
+#X obj 300 570 outlet;
+#X text 360 570 <- toggles if even;
+#X connect 0 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 1 0;

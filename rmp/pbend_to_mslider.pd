@@ -1,0 +1,16 @@
+#N canvas 1027 293 973 912 10;
+#X obj 200 400 inlet;
+#X obj 200 600 outlet;
+#X text 200 150 a middle slider is a slider where the head starts in
+the middle position (64) and can go down to 0 \, or up to 127;
+#X text 200 190 a pitch bend slider usually rests at the value 8191
+\, and can go down to 0 \, or up to 16 \, 383 but a middle slider rests
+at 64 \, and can go down to 0 \, or up to 127;
+#X text 200 100 this abstraction converts pitch bend values (which
+are usualy 0 - 16 \, 383) to middle slider values \, (which are usually
+0 - 127);
+#X text 200 300 TLDR: this converts the input range 0 - 16 \, 383 to
+0 - 127;
+#X obj 200 500 sq/rmp/map 0 16383 0 127;
+#X connect 0 0 6 0;
+#X connect 6 0 1 0;

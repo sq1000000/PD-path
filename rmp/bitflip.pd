@@ -1,0 +1,8 @@
+#N canvas 521 284 758 555 12;
+#X obj 200 200 inlet;
+#X obj 200 410 outlet;
+#X obj 200 300 expr !$f1;
+#X text 200 100 this abstraction is pretty simple. it converts zeros
+into ones \, and ones into zeros;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

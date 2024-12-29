@@ -1,0 +1,65 @@
+#N canvas 1139 199 973 884 10;
+#X obj 500 300 inlet;
+#X obj 200 902 outlet;
+#X floatatom 600 700 5 0 0 0 - - -, f 5;
+#X floatatom 200 700 5 0 0 0 - - -, f 5;
+#X obj 200 800 +;
+#X obj 900 380 loadbang;
+#X obj 600 490 expr if($f2 == $f3 \, -1 \, (((($f1-$f2) / ($f3-$f2))
+* ($f5-$f4)) + $f4)) \; $f4 \; $f5 \;;
+#X obj 600 600 limit;
+#X msg 900 570 0;
+#X obj 500 380 loadbang;
+#X obj 200 490 expr if($f2 == $f3 \, -1 \, (((($f1-$f2) / ($f3-$f2))
+* ($f5-$f4)) + $f4)) \; $f4 \; $f5 \;;
+#X obj 200 600 limit;
+#X msg 500 570 0;
+#X obj 280 450 float 0;
+#X obj 360 450 float 64;
+#X obj 440 450 float 64;
+#X obj 510 450 float 0;
+#X obj 680 450 float 64;
+#X obj 760 450 float 127;
+#X obj 840 450 float 0;
+#X obj 910 450 float 127;
+#X text 200 200 the reason a conversion would need to be made is because
+a linear slider usually tells the attached program to do nothing at
+its resting state (0) \, but the resting state of a middle slider is
+64 \, so the range needs to be changed.;
+#X text 200 100 this abstraction uses two deconstructed map abstractions
+to convert a linear slider (0 - 127) to a middle slider. a middle slider
+is a slider where the head starts in the middle position (64) and can
+go down to 0 \, or up to 127;
+#X connect 0 0 6 0;
+#X connect 0 0 10 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 8 0;
+#X connect 5 0 17 0;
+#X connect 5 0 18 0;
+#X connect 5 0 19 0;
+#X connect 5 0 20 0;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 6 2 7 2;
+#X connect 7 0 2 0;
+#X connect 8 0 7 3;
+#X connect 9 0 12 0;
+#X connect 9 0 13 0;
+#X connect 9 0 14 0;
+#X connect 9 0 15 0;
+#X connect 9 0 16 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 10 2 11 2;
+#X connect 11 0 3 0;
+#X connect 12 0 11 3;
+#X connect 13 0 10 1;
+#X connect 14 0 10 2;
+#X connect 15 0 10 3;
+#X connect 16 0 10 4;
+#X connect 17 0 6 1;
+#X connect 18 0 6 2;
+#X connect 19 0 6 3;
+#X connect 20 0 6 4;

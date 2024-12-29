@@ -1,0 +1,18 @@
+#N canvas 1285 35 1265 1285 12;
+#X obj 200 200 inlet;
+#X obj 200 600 outlet;
+#X obj 300 570 outlet;
+#X obj 200 300 mod 2;
+#X floatatom 200 340 5 0 0 0 - - -, f 5;
+#X obj 200 500 sq/rmp/bitflip;
+#X text 200 100 this abstraction sends a toggle if the input number
+is even. keep in mind that this ONLY works on integers! if a number
+is input that isn't an integer \, it'll treat it as if the 'int' block
+was applied;
+#X text 260 600 <- toggles if even;
+#X text 360 570 <- toggles if odd;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
