@@ -4,6 +4,8 @@ This is my directory of Pure Data abstractions. Despite the name, I **highly rec
 
 I try my best to label everything so newcomers can understand what's going on. But still, there's a lot of content that's hard to explain. If you're confused about anything, PLEASE message me or open an issue or a pull request. I'm trying to make this as approachable as possible.
 
+Keep in mind that nothing here is final. I often change my mind on what these abstractions should be called. Sometimes I change my mind on the entirety of how these abstractions should work. Know that everything in this repository can **and will** change over time.
+
 ## Custom Terminology
 
 One of the most annoying things while making these was seeing community-made PD files with zero explanation for what's actually happening inside the file. They're often unsorted and use words and dependencies I could never understand. I'm no exception. Throughout these patches, I use a lot of made up words. So here, I'll try to simplify some of the terms.
