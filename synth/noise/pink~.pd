@@ -1,0 +1,10 @@
+#N canvas 1285 30 1265 1300 12;
+#X obj 200 400 outlet~;
+#X text 200 100 I sure hope you have the iemlib library installed!
+;
+#X obj 200 200 iemlib/pink~;
+#X obj 200 300 *~ 1.145;
+#X text 270 300 <- compensate for volume lost from filtering white
+noise;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;

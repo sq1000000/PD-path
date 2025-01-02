@@ -1,20 +1,20 @@
-#N canvas 641 381 1279 665 12;
-#X obj 200 100 inlet~;
-#X obj 300 100 inlet;
-#X obj 200 600 outlet~;
-#X obj 200 260 *~;
-#X obj 200 300 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
-#X obj 300 200 hsl 128 15 1 7 0 0 empty empty empty -2 -8 0 10 #a3ffbf
+#N canvas 641 381 1279 668 12;
+#X obj 200 200 inlet~;
+#X obj 300 200 inlet;
+#X obj 200 700 outlet~;
+#X obj 200 360 *~;
+#X obj 200 400 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 300 300 hsl 128 15 1 7 0 0 empty empty empty -2 -8 0 10 #a3ffbf
 #000000 #000000 0 1;
-#X floatatom 300 220 5 0 0 0 - - -, f 5;
-#X obj 500 440 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X floatatom 300 320 5 0 0 0 - - -, f 5;
+#X obj 400 540 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 500 470 metro 100;
-#X obj 500 500 tabwrite~ \$0-display;
-#X obj 200 330 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
-#X obj 200 359 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
-#X obj 200 388 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
-#N canvas 0 0 450 300 (subpatch) 0;
+#X obj 400 570 metro 100;
+#X obj 400 600 tabwrite~ \$0-display;
+#X obj 200 430 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#X obj 200 459 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 200 488 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-display 500 float 1 black black;
 #A 0 -0.000461578 -0.000667572 -9.91821e-05 -0.000984192 -0.00094986
 -0.000583649 -0.000453949 -0.00116348 -0.000640869 -0.000137329 -0.000324249
@@ -101,17 +101,17 @@
 -0.000335693 -0.000419617 -0.000404358 -3.43323e-05 -0.000846863 -0.000343323
 -8.39233e-05 8.39233e-05 0.000335693;
 #X coords 0 1 499 -1 200 140 1;
-#X restore 700 400 graph;
-#X obj 300 160 sq/logic/map 0 127 1 7;
-#X text 600 230 tutorial here: https://www.youtube.com/watch?v=f2s3mAqLjkg
+#X restore 600 500 graph;
+#X obj 300 260 sq/logic/map 0 127 1 7;
+#X text 600 250 tutorial here: https://www.youtube.com/watch?v=f2s3mAqLjkg
 ;
-#X text 600 130 I don't really know how this works \, all that matters
+#X text 200 130 I don't really know how this works \, all that matters
 is that it does;
-#X text 600 180 I could probably add more controllable parameters if
+#X text 600 200 I could probably add more controllable parameters if
 I actually understood what was going on;
-#X text 600 100 this abstraction applies a wavefolding effect;
-#X obj 400 97 loadbang;
-#X obj 400 126 float 0;
+#X text 200 100 this abstraction applies a wavefolding effect;
+#X obj 400 197 loadbang;
+#X obj 400 226 float 0;
 #X connect 0 0 3 0;
 #X connect 1 0 14 0;
 #X connect 3 0 4 0;

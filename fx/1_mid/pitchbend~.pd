@@ -1,6 +1,6 @@
-#N canvas 1359 356 1279 876 10;
-#X obj 400 530 - 1;
-#X obj 400 590 phasor~;
+#N canvas 10 35 2540 1285 10;
+#X obj 400 540 - 1;
+#X obj 400 600 phasor~;
 #X obj 600 730 wrap~;
 #X obj 600 760 -~ 0.5;
 #X obj 600 790 *~ 0.5;
@@ -8,39 +8,40 @@
 #X obj 600 880 *~;
 #X obj 650 760 *~ 50;
 #X obj 650 790 vd~ sample;
-#X obj 400 960 +~;
+#X obj 400 940 +~;
 #X obj 450 700 *~ 50;
 #X obj 450 790 vd~ sample;
 #X obj 400 880 *~;
 #X obj 400 700 -~ 0.5;
 #X obj 400 790 *~ 0.5;
 #X obj 400 810 cos~;
-#X text 200 100 Pitch shifter algorithm from (thanks) http://www.katjaas.nl/pitchshift/pitchshift.html
-;
-#X obj 400 560 *~ -20;
+#X obj 400 570 *~ -20;
 #X obj 600 700 +~ 0.5;
 #X floatatom 400 500 5 0 0 0 - - -, f 5;
 #X obj 200 200 inlet~;
-#X obj 400 1040 outlet~;
+#X obj 400 1000 outlet~;
 #X obj 400 200 inlet;
 #X obj 200 300 delwrite~ sample 500;
 #X floatatom 400 400 0 0 0 0 - - -;
 #X obj 400 460 exp;
 #X obj 400 430 * 0.05776;
-#X text 470 400 <-- transposition (semitones);
+#X text 430 400 <-- transposition (semitones);
 #X text 640 300 <- -12 is one octave down. +12 is one octave up;
-#X text 500 110 <--- haha that website doesnt exist anymore. I had
-to find a pitch shifter elsewhere. luckily this gu had one sitting
-around on githubhttps://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12e0efb3fa3b65afe33373848/android/assets/pd/pitchshift.pd
-;
-#X text 450 500 <-- tape speed multiplier;
+#X text 440 500 <-- tape speed multiplier;
 #X obj 400 300 sq/logic/map -190.5 317.5 -48 48;
 #X text 700 330 as a little easter egg \, the conversion block accepts
-more than the 0-127 range \, allowing you to go even lower;
-#X connect 0 0 17 0;
+more than the 0-127 range \, allowing you to go even lower or higher
+;
+#X text 200 100 Pitch shifter algorithm from http://www.katjaas.nl/pitchshift/pitchshift.html
+;
+#X text 500 110 <--- haha that website doesnt exist anymore. I had
+to find a pitch shifter elsewhere. luckily this guy had one sitting
+around on githubhttps://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12e0efb3fa3b65afe33373848/android/assets/pd/pitchshift.pd
+;
+#X connect 0 0 16 0;
 #X connect 1 0 10 0;
 #X connect 1 0 13 0;
-#X connect 1 0 18 0;
+#X connect 1 0 17 0;
 #X connect 2 0 3 0;
 #X connect 2 0 7 0;
 #X connect 3 0 4 0;
@@ -49,19 +50,19 @@ more than the 0-127 range \, allowing you to go even lower;
 #X connect 6 0 9 1;
 #X connect 7 0 8 0;
 #X connect 8 0 6 1;
-#X connect 9 0 21 0;
+#X connect 9 0 20 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 1;
 #X connect 12 0 9 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
 #X connect 15 0 12 0;
-#X connect 17 0 1 0;
-#X connect 18 0 2 0;
-#X connect 19 0 0 0;
-#X connect 20 0 23 0;
-#X connect 22 0 31 0;
-#X connect 24 0 26 0;
-#X connect 25 0 19 0;
-#X connect 26 0 25 0;
-#X connect 31 0 24 0;
+#X connect 16 0 1 0;
+#X connect 17 0 2 0;
+#X connect 18 0 0 0;
+#X connect 19 0 22 0;
+#X connect 21 0 29 0;
+#X connect 23 0 25 0;
+#X connect 24 0 18 0;
+#X connect 25 0 24 0;
+#X connect 29 0 23 0;

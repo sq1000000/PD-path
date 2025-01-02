@@ -1,0 +1,5 @@
+#N canvas 1285 33 1265 1297 12;
+#X obj 200 300 outlet~;
+#X obj 200 200 sq/synth/noise/brown~;
+#X text 200 100 red noise is the same thing as brown noise;
+#X connect 1 0 0 0;

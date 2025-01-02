@@ -1,0 +1,1 @@
+This folder contains a bunch of alternatives to the 'osc~' object. The `osc~` object can only make sine waves, the tools in this folder let you make other types of waveforms, like square waves with the 'square~' object, or triangle waves with the 'triangle~' object.

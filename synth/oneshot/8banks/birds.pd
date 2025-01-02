@@ -1,0 +1,380 @@
+#N canvas 10 35 1265 1285 10;
+#N canvas 10 35 1265 1285 birds 0;
+#X obj 201 301 cnv 15 600 140 empty empty Birds 20 12 1 14 #7c7c7c
+#fcfcfc 0;
+#X obj 272 327 cnv 15 100 100 empty empty amp 20 12 1 14 #e0e0e0 #404040
+0;
+#X obj 297 365 vsl 10 50 0 1 0 0 \$0-atk \$0-atk-r atk 0 -8 1 8 #fcfcfc
+#000000 #000000 1100 1;
+#X obj 326 366 vsl 10 50 0 1 0 0 \$0-dcy \$0-dcy-r dcy 0 -8 1 8 #fcfcfc
+#000000 #000000 900 1;
+#X obj 381 327 cnv 15 200 100 empty empty f-modulation 20 12 1 14 #e0e0e0
+#404040 0;
+#X obj 387 366 vsl 10 50 0 1 0 0 \$0-fmod1 \$0-fmod1-r fmod1 0 -8 1
+8 #fcfcfc #000000 #000000 15 1;
+#X obj 422 366 vsl 10 50 0 1 0 0 \$0-atkf1 \$0-atkf1-r atkf1 0 -8 1
+8 #fcfcfc #000000 #000000 600 1;
+#X obj 453 366 vsl 10 50 0 1 0 0 \$0-dcyf1 \$0-dcyf1-r dcyf1 0 -8 1
+8 #fcfcfc #000000 #000000 4900 1;
+#X obj 488 366 vsl 10 50 0 1 0 0 \$0-fmod2 \$0-fmod2-r fmod2 0 -8 1
+8 #fcfcfc #000000 #000000 300 1;
+#X obj 523 366 vsl 10 50 0 1 0 0 \$0-atkf2 \$0-atkf2-r atkf2 0 -8 1
+8 #fcfcfc #000000 #000000 4900 1;
+#X obj 554 366 vsl 10 50 0 1 0 0 \$0-dcyf2 \$0-dcyf2-r dcyf2 0 -8 1
+8 #fcfcfc #000000 #000000 3800 1;
+#X obj 589 327 cnv 15 200 100 empty empty a-modulation 20 12 1 14 #e0e0e0
+#404040 0;
+#X obj 593 366 vsl 10 50 0 1 0 0 \$0-amod1 \$0-amod1-r amod1 0 -8 1
+8 #fcfcfc #000000 #000000 4800 1;
+#X obj 628 366 vsl 10 50 0 1 0 0 \$0-atka1 \$0-atka1-r atka1 0 -8 1
+8 #fcfcfc #000000 #000000 1000 1;
+#X obj 659 366 vsl 10 50 0 1 0 0 \$0-dcya1 \$0-dcya1-r dcya1 0 -8 1
+8 #fcfcfc #000000 #000000 3600 1;
+#X obj 693 365 vsl 10 50 0 1 0 0 \$0-amod2 \$0-amod2-r amod2 0 -8 1
+8 #fcfcfc #000000 #000000 4900 1;
+#X obj 728 365 vsl 10 50 0 1 0 0 \$0-atka2 \$0-atka2-r atka2 0 -8 1
+8 #fcfcfc #000000 #000000 700 1;
+#X obj 759 365 vsl 10 50 0 1 0 0 \$0-dcya2 \$0-dcya2-r dcya2 0 -8 1
+8 #fcfcfc #000000 #000000 3000 1;
+#X obj 435 305 cnv 15 280 16 empty empty empty 20 12 1 14 #e0e0e0 #404040
+0;
+#X obj 303 306 bng 15 80 50 0 \$0-trig empty empty 0 -6 0 8 #fcfcfc
+#000000 #000000;
+#N canvas 535 331 1577 858 birds 0;
+#N canvas 0 25 2560 1305 hm-bird 0;
+#X obj 370 230 osc~;
+#X obj 300 200 r~ \$0-amp1;
+#X obj 300 260 *~;
+#X obj 430 530 osc~;
+#X obj 360 560 *~;
+#X obj 360 500 r~ \$0-amp2;
+#X obj 370 200 r~ \$0-frq1;
+#X text 100 600 amp mod;
+#X text 100 300 freq mod;
+#X obj 200 500 osc~;
+#X obj 200 640 *~;
+#X obj 300 500 sig~ 1;
+#X obj 300 600 -~;
+#X obj 300 300 +~ 1;
+#X obj 200 400 *~;
+#X obj 200 200 r~ \$0-ifrq;
+#X obj 200 700 outlet~;
+#X text 200 100 Bird call - based on Hans Mikelson 2000;
+#X obj 430 500 r~ \$0-frq2;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 3 0 4 1;
+#X connect 4 0 12 1;
+#X connect 5 0 4 0;
+#X connect 6 0 0 0;
+#X connect 9 0 10 0;
+#X connect 10 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 13 0 14 1;
+#X connect 14 0 9 0;
+#X connect 15 0 14 0;
+#X connect 18 0 3 0;
+#X restore 340 430 pd hm-bird;
+#X obj 300 500 *~ 0.1;
+#X obj 200 600 s~ \$0-ifrq;
+#X obj 500 600 s~ \$0-frq1;
+#X obj 900 600 s~ \$0-amp1;
+#X obj 1100 600 s~ \$0-amp2;
+#X obj 700 600 s~ \$0-frq2;
+#X obj 200 500 sig~;
+#X obj 500 400 ead~;
+#X obj 500 500 *~ 3000;
+#X obj 500 470 *~;
+#X obj 600 330 * 900;
+#X obj 530 330 * 900;
+#X obj 700 500 *~ 3000;
+#X obj 700 400 ead~;
+#X obj 700 470 *~;
+#X obj 800 330 * 900;
+#X obj 720 330 * 900;
+#X obj 900 400 ead~;
+#X obj 900 500 *~;
+#X obj 1000 330 * 900;
+#X obj 930 330 * 900;
+#X obj 1100 400 ead~;
+#X obj 1100 500 *~;
+#X obj 1200 330 * 900;
+#X obj 1130 330 * 900;
+#X obj 300 400 ead~;
+#X obj 380 330 * 900;
+#X obj 320 330 * 900;
+#X obj 300 460 *~;
+#X obj 200 400 * 7000;
+#X obj 320 300 r \$0-atk;
+#X obj 380 300 r \$0-dcy;
+#X obj 540 420 r \$0-fmod1;
+#X obj 530 300 r \$0-atkf1;
+#X obj 740 420 r \$0-fmod2;
+#X obj 720 300 r \$0-atkf2;
+#X obj 600 300 r \$0-dcyf1;
+#X obj 800 300 r \$0-dcyf2;
+#X obj 940 450 r \$0-amod1;
+#X obj 930 300 r \$0-atka1;
+#X obj 1000 300 r \$0-dcya1;
+#X obj 1140 450 r \$0-amod2;
+#X obj 1130 300 r \$0-atka2;
+#X obj 1200 300 r \$0-dcya2;
+#X obj 200 200 r \$0-ifrq;
+#X obj 1100 200 r \$0-trig;
+#X obj 900 200 r \$0-trig;
+#X obj 700 200 r \$0-trig;
+#X obj 500 200 r \$0-trig;
+#X obj 300 200 r \$0-trig;
+#X obj 200 430 + 300;
+#X obj 300 600 outlet~;
+#X floatatom 600 360 5 0 0 0 - - -, f 5;
+#X floatatom 530 360 5 0 0 0 - - -, f 5;
+#X floatatom 380 360 5 0 0 0 - - -, f 5;
+#X floatatom 320 360 5 0 0 0 - - -, f 5;
+#X floatatom 800 360 5 0 0 0 - - -, f 5;
+#X floatatom 720 360 5 0 0 0 - - -, f 5;
+#X floatatom 1000 360 5 0 0 0 - - -, f 5;
+#X floatatom 930 360 5 0 0 0 - - -, f 5;
+#X floatatom 1200 360 5 0 0 0 - - -, f 5;
+#X floatatom 1130 360 5 0 0 0 - - -, f 5;
+#X floatatom 540 440 5 0 0 0 - - -, f 5;
+#X floatatom 740 440 5 0 0 0 - - -, f 5;
+#X floatatom 940 470 5 0 0 0 - - -, f 5;
+#X floatatom 1140 470 5 0 0 0 - - -, f 5;
+#X connect 0 0 29 1;
+#X connect 1 0 52 0;
+#X connect 7 0 2 0;
+#X connect 8 0 10 0;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;
+#X connect 11 0 53 0;
+#X connect 12 0 54 0;
+#X connect 13 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 57 0;
+#X connect 17 0 58 0;
+#X connect 18 0 19 0;
+#X connect 19 0 4 0;
+#X connect 20 0 59 0;
+#X connect 21 0 60 0;
+#X connect 22 0 23 0;
+#X connect 23 0 5 0;
+#X connect 24 0 61 0;
+#X connect 25 0 62 0;
+#X connect 26 0 29 0;
+#X connect 27 0 55 0;
+#X connect 28 0 56 0;
+#X connect 29 0 1 0;
+#X connect 30 0 51 0;
+#X connect 31 0 28 0;
+#X connect 32 0 27 0;
+#X connect 33 0 63 0;
+#X connect 34 0 12 0;
+#X connect 35 0 64 0;
+#X connect 36 0 17 0;
+#X connect 37 0 11 0;
+#X connect 38 0 16 0;
+#X connect 39 0 65 0;
+#X connect 40 0 21 0;
+#X connect 41 0 20 0;
+#X connect 42 0 66 0;
+#X connect 43 0 25 0;
+#X connect 44 0 24 0;
+#X connect 45 0 30 0;
+#X connect 46 0 22 0;
+#X connect 47 0 18 0;
+#X connect 48 0 14 0;
+#X connect 49 0 8 0;
+#X connect 50 0 26 0;
+#X connect 51 0 7 0;
+#X connect 53 0 8 2;
+#X connect 54 0 8 1;
+#X connect 55 0 26 2;
+#X connect 56 0 26 1;
+#X connect 57 0 14 2;
+#X connect 58 0 14 1;
+#X connect 59 0 18 2;
+#X connect 60 0 18 1;
+#X connect 61 0 22 2;
+#X connect 62 0 22 1;
+#X connect 63 0 10 1;
+#X connect 64 0 15 1;
+#X connect 65 0 19 1;
+#X connect 66 0 23 1;
+#X restore 200 500 pd birds;
+#X obj 500 499 bng 15 80 50 0 empty empty empty 0 -6 0 8 #fcfcfc #000000
+#000000;
+#X symbolatom 488 306 32 0 0 0 name #0-name -, f 32;
+#N canvas 10 35 2540 1288 tweet 0;
+#X obj 300 400 s \$0-ifrq-r;
+#X obj 400 420 s \$0-atk-r;
+#X obj 400 400 s \$0-dcy-r;
+#X obj 500 440 s \$0-fmod1-r;
+#X obj 500 420 s \$0-atkf1-r;
+#X obj 500 400 s \$0-dcyf1-r;
+#X obj 600 440 s \$0-fmod2-r;
+#X obj 600 420 s \$0-atkf2-r;
+#X obj 600 400 s \$0-dcyf2-r;
+#X obj 700 440 s \$0-amod1-r;
+#X obj 700 420 s \$0-atka1-r;
+#X obj 700 400 s \$0-dcya1-r;
+#X obj 800 440 s \$0-amod2-r;
+#X obj 800 420 s \$0-atka2-r;
+#X obj 800 400 s \$0-dcya2-r;
+#X obj 200 200 inlet;
+#X obj 200 230 unpack s f f f f f f f f f f f f f f f;
+#X obj 300 420 s \$0-name;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 1 0 0;
+#X connect 16 2 1 0;
+#X connect 16 3 2 0;
+#X connect 16 4 3 0;
+#X connect 16 5 4 0;
+#X connect 16 6 5 0;
+#X connect 16 7 6 0;
+#X connect 16 8 7 0;
+#X connect 16 9 8 0;
+#X connect 16 10 9 0;
+#X connect 16 11 10 0;
+#X connect 16 12 11 0;
+#X connect 16 13 12 0;
+#X connect 16 14 13 0;
+#X connect 16 15 14 0;
+#X restore 299 569 pd tweet loader;
+#N canvas 0 25 1171 790 tweet 0;
+#X obj 410 220 r \$0-atk;
+#X obj 420 240 r \$0-dcy;
+#X obj 500 200 r \$0-fmod1;
+#X obj 510 220 r \$0-atkf1;
+#X obj 600 200 r \$0-fmod2;
+#X obj 610 220 r \$0-atkf2;
+#X obj 520 240 r \$0-dcyf1;
+#X obj 620 240 r \$0-dcyf2;
+#X obj 700 200 r \$0-amod1;
+#X obj 710 220 r \$0-atka1;
+#X obj 720 240 r \$0-dcya1;
+#X obj 800 200 r \$0-amod2;
+#X obj 810 220 r \$0-atka2;
+#X obj 820 240 r \$0-dcya2;
+#X obj 400 200 r \$0-ifrq;
+#X obj 200 500 pack s f f f f f f f f f f f f f f f;
+#X msg 200 400 tweet;
+#X obj 200 600 outlet;
+#X msg 200 530 set \$1 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9 \$10 \$11 \$12
+\$13 \$14 \$15 \$16;
+#X obj 200 200 inlet;
+#X connect 0 0 15 2;
+#X connect 1 0 15 3;
+#X connect 2 0 15 4;
+#X connect 3 0 15 5;
+#X connect 4 0 15 7;
+#X connect 5 0 15 8;
+#X connect 6 0 15 6;
+#X connect 7 0 15 9;
+#X connect 8 0 15 10;
+#X connect 9 0 15 11;
+#X connect 10 0 15 12;
+#X connect 11 0 15 13;
+#X connect 12 0 15 14;
+#X connect 13 0 15 15;
+#X connect 14 0 15 1;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 18 0 17 0;
+#X connect 19 0 16 0;
+#X restore 500 520 pd tweet saver;
+#N canvas 10 33 2540 1297 tweet 0;
+#X msg 200 300 triple-tailed-tree-troubler 0.387755 0.0204082 0.204082
+0.367347 0.571429 0.734694 0.918367 1 0.77551 0.571429 0.367347 0.22449
+0.0204082 0.183673 0.44898;
+#X obj 200 250 select 0 1 2 3 4 5 6 7;
+#X obj 200 200 inlet;
+#X obj 200 1100 s \$0-tweetload;
+#X msg 300 400 speckled-throated-spew 0.183673 0.591837 0.387755 0.0104082
+0.530612 0.346939 0.244898 0.55102 0.122449 0.387755 1 0.612245 0.346939
+0.816327 0.653061;
+#X msg 400 500 lesser-spotted-grinchwarbler 0.55102 0.591837 0.387755
+0.0716327 0.0204082 0.346939 0.0204082 0.55102 0.122449 0.632653 1
+0.612245 0.346939 0.816327 0.653061;
+#X msg 500 600 long-toed-mudhopper 0.163265 0.22449 0.183673 0.00306122
+0.122449 1 0.0612245 1 0.77551 0.979592 0.204082 0.734694 1 0.142857
+0.612245;
+#X msg 600 700 yellow-yiffled-yaffle 0.0204082 0.367347 0.183673 0.0612245
+0 1 0.285714 0.22449 0.489796 0.367347 0.387755 0.734694 0.204082 0.428571
+0.142857;
+#X msg 700 800 pointy-beaked-beetlefiend 0.428571 0.204082 0.489796
+0.0204082 0.795918 0.591837 0.285714 0.22449 0.489796 0.204082 0.836735
+0.734694 0.77551 0.428571 0.142857;
+#X msg 800 900 african-boojuboolubala 0.306122 0.959184 0.0408163 1
+0 0.591837 0.285714 0.22449 0.489796 0.204082 0.836735 0.734694 0.77551
+0.428571 0.142857;
+#X msg 900 1000 common-muckoink 0.0204082 0.8 0.0816327 0.0204082 0.001
+0.99 0.0204082 0.01 1 1 0.142857 0.734694 1 0.0612245 0.530612;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 1 1 4 0;
+#X connect 1 2 5 0;
+#X connect 1 3 6 0;
+#X connect 1 4 7 0;
+#X connect 1 5 8 0;
+#X connect 1 6 9 0;
+#X connect 1 7 10 0;
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 3 0;
+#X restore 300 522 pd tweet presets;
+#X obj 329 307 hradio 12 1 1 8 \$0-preset empty empty 0 -6 1 8 #fcfcfc
+#000000 #000000 3;
+#X obj 299 545 r \$0-tweetload;
+#X obj 300 500 r \$0-preset;
+#X msg 500 540 tweet 0.55102 0.591837 0.387755 0.0716327 0.0204082
+0.346939 0.0204082 0.55102 0.122449 0.632653 1 0.612245 0.346939 0.816327
+0.653061;
+#X obj 213 327 cnv 15 50 100 empty empty F 20 12 1 14 #e0e0e0 #404040
+0;
+#X obj 230 364 vsl 10 50 0 1 0 0 \$0-ifrq \$0-ifrq-r ifrq 0 -8 1 8
+#fcfcfc #000000 #000000 800 1;
+#X obj 200 600 outlet~;
+#X obj 200 100 inlet;
+#X obj 300 100 inlet;
+#X connect 20 0 32 0;
+#X connect 21 0 24 0;
+#X connect 24 0 29 0;
+#X connect 27 0 23 0;
+#X connect 28 0 25 0;
+#X connect 33 0 19 0;
+#X connect 34 0 26 0;
+#X coords 0 -1 1 1 600 140 1 201 301;
+#X restore 200 300 pd birds;
+#X obj 200 500 outlet~;
+#X text 200 100 This is a fantastastic bird sound one shot generator
+;
+#X text 200 130 I found the code here: https://community.rebeltech.org/t/karl-bird-generator/346/4
+Then I cleaned it up a bit. Made it easier to read;
+#X obj 200 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 200 200 inlet;
+#X text 600 100 credit to Andy Farnell for the original code;
+#X obj 300 200 inlet;
+#X obj 300 230 hradio 12 0 1 8 empty empty empty 0 -6 1 8 #fcfcfc #000000
+#000000 3;
+#X obj 600 195 loadbang;
+#X obj 600 219 del 50;
+#X msg 600 240 0;
+#X connect 0 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 0 1;

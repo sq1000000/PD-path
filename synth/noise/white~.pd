@@ -1,0 +1,6 @@
+#N canvas 1285 35 1265 1294 12;
+#X obj 200 300 outlet~;
+#X obj 200 200 noise~;
+#X text 200 100 the 'noise~' object makes white noise. no need to complicate
+things in this abstraction;
+#X connect 1 0 0 0;

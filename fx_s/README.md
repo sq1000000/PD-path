@@ -1,1 +1,1 @@
-This folder is a set of tools to apply stereo effect to incoming audio signals. I try to keep all my effects in sq/fx, but I keep them all mono. All the effects that NEED to be stereo, I usually keep right here in sq/fx_s
+This folder contains all “special” abstractions that don’t fit neatly into the `sq/fx` folder. I generally try to keep everything in `sq/fx` mono, but many of these abstractions are stereo tools, which sort of breaks the mono-centric organization. In short, if an effect has to be stereo or otherwise doesn’t align with the `sq/fx` norms, it goes here.
