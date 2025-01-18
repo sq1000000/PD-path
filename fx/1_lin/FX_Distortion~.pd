@@ -1,0 +1,37 @@
+#N canvas 706 400 1289 795 12;
+#X obj 550 340 expr (2*$f1/(1-$f1));
+#X obj 300 440 expr~ ((1+$f3)*$v1/(1+$f3*$v2));
+#X obj 400 350 abs~;
+#X obj 200 800 outlet~;
+#X obj 300 300 +~ 0.02;
+#X obj 200 200 inlet~;
+#X obj 550 300 sq/rmp/map 0 127 0 0.99;
+#X text 700 340 <- range (0-1);
+#X obj 300 600 sq/volumematch~;
+#X msg 430 560 0;
+#X obj 200 740 sq/logic/bypass~;
+#X obj 500 200 inlet;
+#X text 200 100 there's so many ways to do distortion. this is one
+of them;
+#X text 300 130 I'm not really sure how this works. I like it though
+;
+#X text 700 100 original patch sourced from here: https://github.com/michezio/PureDataTools/blob/acd62c6a83eb8cb68d3e9c83b0b1c5da2a5fd5df/fx/FX_Distortion~.pd#L4
+;
+#X obj 430 530 loadbang;
+#X text 450 600 <- match volume to original inlet;
+#X text 530 440 <- geez \, I have no idea what this is doing;
+#X connect 0 0 1 2;
+#X connect 1 0 8 0;
+#X connect 2 0 1 1;
+#X connect 4 0 1 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 5 0 8 1;
+#X connect 5 0 10 0;
+#X connect 6 0 0 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 2;
+#X connect 10 0 3 0;
+#X connect 11 0 10 2;
+#X connect 11 0 6 0;
+#X connect 15 0 9 0;

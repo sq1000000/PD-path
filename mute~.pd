@@ -1,4 +1,4 @@
-#N canvas 10 35 1265 1291 10;
+#N canvas 10 35 1265 1294 10;
 #X obj 200 200 inlet~;
 #X obj 300 200 inlet~;
 #X obj 1330 1900 f;
@@ -6,7 +6,7 @@
 #X obj 200 700 outlet~;
 #X obj 300 700 outlet~;
 #X obj 400 250 tgl 15 1 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 127 127;
+#000000 0 127;
 #X obj 500 300 outlet;
 #X text 550 300 <- passthrough outlet;
 #X obj 200 600 *~;
@@ -21,6 +21,7 @@
 streams with a toggle box. Nothing more \, nothing less;
 #X text 200 140 or you could just use the mute button on your computer.
 but this is more "official" I guess;
+#X obj 500 400 loadbang;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
 #X connect 3 0 6 0;
@@ -36,3 +37,4 @@ but this is more "official" I guess;
 #X connect 15 1 12 0;
 #X connect 16 0 13 0;
 #X connect 16 0 14 0;
+#X connect 19 0 11 0;

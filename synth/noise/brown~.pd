@@ -1,9 +1,11 @@
-#N canvas 1285 35 1265 1294 12;
+#N canvas 1285 33 1265 1297 12;
 #X obj 200 400 outlet~;
 #X obj 200 200 noise~;
 #X obj 200 250 lop~ 100;
 #X obj 200 300 *~ 1.3;
 #X text 260 300 <- compensate for volume lost from lop~ object;
+#X text 200 100 tutorial here: https://www.youtube.com/watch?v=J4ZGwkJmkfA
+;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;

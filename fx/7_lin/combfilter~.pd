@@ -1,4 +1,4 @@
-#N canvas 1285 33 1265 1291 10;
+#N canvas 1285 33 1265 1294 10;
 #X obj 268 293 cnv 18 140 150 empty empty comb_filter 10 12 1 10 #e0e0e0
 #404040 0;
 #N canvas 667 172 450 300 allpass 0;
@@ -68,8 +68,8 @@
 #X connect 23 0 5 0;
 #X connect 24 0 23 1;
 #X restore 612 482 pd comb_filter1;
-#X obj 270 490 hsl 128 15 0 127 0 1 \$0-combfilter-delay-s \$0-combfilter-delay-r
-DELAY 133 7 0 10 #fcfcfc #000000 #000000 12700 1;
+#X obj 280 500 hsl 128 15 0 127 0 1 \$0-combfilter-delay-s \$0-combfilter-delay-r
+DELAY 133 4 0 10 #fcfcfc #000000 #000000 6650 1;
 #N canvas 0 22 793 555 comb_filter2 0;
 #X obj 195 112 inlet~;
 #X obj 365 79 inlet;
@@ -148,25 +148,25 @@ DELAY 133 7 0 10 #fcfcfc #000000 #000000 12700 1;
 #X obj 800 620 pack 0 50;
 #X obj 800 650 line;
 #X obj 800 680 t f f;
-#X obj 612 858 *~ -1;
+#X obj 620 930 *~ -1;
 #X obj 670 580 t f f;
-#X obj 255 838 *~;
-#X obj 612 834 *~;
-#X obj 283 568 hsl 128 15 0 127 0 1 \$0-combfilter-dry/wet-s \$0-combfilter-dry/wet-r
-DRY/WET 133 7 0 10 #fcfcfc #000000 #000000 6158 1;
-#X obj 220 620 t f f;
-#X msg 220 650 127 \$1;
-#X obj 220 670 -;
-#X obj 220 700 / 127;
-#X obj 220 720 pack 0 50;
-#X obj 220 740 line~;
-#X obj 410 780 / 127;
-#X obj 410 800 pack 0 50;
-#X obj 410 820 line~;
+#X obj 200 800 *~;
+#X obj 620 900 *~;
+#X obj 300 580 hsl 128 15 0 127 0 1 \$0-combfilter-dry/wet-s \$0-combfilter-dry/wet-r
+DRY/WET 136 5 0 10 #fcfcfc #000000 #000000 5950 1;
+#X obj 300 630 t f f;
+#X msg 300 660 127 \$1;
+#X obj 300 680 -;
+#X obj 300 710 / 127;
+#X obj 300 730 pack 0 50;
+#X obj 300 750 line~;
+#X obj 400 800 / 127;
+#X obj 400 820 pack 0 50;
+#X obj 400 840 line~;
 #X obj 612 698 hip~ 5;
-#X obj 255 868 hip~ 5;
-#X obj 613 886 min~ 1;
-#X obj 613 908 max~ -1;
+#X obj 200 830 hip~ 5;
+#X obj 620 960 min~ 1;
+#X obj 620 990 max~ -1;
 #X obj 211 1029 outlet~;
 #X obj 430 650 / 127;
 #X obj 430 720 pack 0 50;
@@ -190,23 +190,22 @@ DRY/WET 133 7 0 10 #fcfcfc #000000 #000000 6158 1;
 #X obj 900 700 t f f;
 #X obj 659 399 r \$0-combfilter-delay-s;
 #X obj 659 421 t f f;
-#X obj 613 930 *~ 1;
 #X obj 360 474 cnv 5 5 5 empty \$0-instance-num 0 0 0 0 12 #fcfcfc
 #404040 0;
 #X obj 359 299 tgl 15 1 \$0-combfilter-comb/dly-s \$0-combfilter-comb/dly-r
-COMB 17 7 0 10 #fcfcfc #000000 #000000 1 1;
+COMB 17 7 0 10 #fcfcfc #000000 #000000 103 103;
 #X obj 275 333 vsl 18 100 0 127 0 0 empty empty del 0 -9 1 10 #000000
-#ffffff #7c7c7c 9900 1;
+#ffffff #7c7c7c 5184 1;
 #X obj 297 333 vsl 18 100 0 127 0 0 empty empty fbk 0 -9 1 10 #000000
-#ffffff #7c7c7c 9700 1;
+#ffffff #7c7c7c 7990 1;
 #X obj 362 333 vsl 18 100 0 127 0 0 empty empty drv 0 -9 1 10 #000000
-#ffffff #7c7c7c 4900 1;
+#ffffff #7c7c7c 5301 1;
 #X obj 319 333 vsl 18 100 0 127 0 0 empty empty lop 0 -9 1 10 #000000
-#ffffff #7c7c7c 2950 1;
+#ffffff #7c7c7c 624 1;
 #X obj 341 333 vsl 18 100 0 127 0 0 empty empty hip 0 -9 1 10 #000000
-#ffffff #7c7c7c 4200 1;
+#ffffff #7c7c7c 0 1;
 #X obj 383 333 vsl 18 100 0 127 0 0 empty empty d/w 0 -9 1 10 #000000
-#ffffff #7c7c7c 4800 1;
+#ffffff #7c7c7c 4638 1;
 #X obj 250 200 inlet;
 #X obj 290 200 inlet;
 #X obj 330 200 inlet;
@@ -255,7 +254,7 @@ COMB 17 7 0 10 #fcfcfc #000000 #000000 1 1;
 #X connect 31 0 9 0;
 #X connect 32 0 33 0;
 #X connect 33 0 34 0;
-#X connect 34 0 56 0;
+#X connect 34 0 35 0;
 #X connect 36 0 41 0;
 #X connect 36 0 40 1;
 #X connect 37 0 38 0;
@@ -278,17 +277,16 @@ COMB 17 7 0 10 #fcfcfc #000000 #000000 1 1;
 #X connect 54 0 55 0;
 #X connect 55 0 2 1;
 #X connect 55 1 4 1;
-#X connect 56 0 35 0;
-#X connect 59 0 3 0;
-#X connect 60 0 45 0;
-#X connect 61 0 36 0;
-#X connect 62 0 11 0;
-#X connect 63 0 48 0;
-#X connect 64 0 21 0;
+#X connect 58 0 3 0;
+#X connect 59 0 45 0;
+#X connect 60 0 36 0;
+#X connect 61 0 11 0;
+#X connect 62 0 48 0;
+#X connect 63 0 21 0;
+#X connect 64 0 57 0;
 #X connect 65 0 58 0;
 #X connect 66 0 59 0;
-#X connect 67 0 60 0;
+#X connect 67 0 61 0;
 #X connect 68 0 62 0;
-#X connect 69 0 63 0;
-#X connect 70 0 61 0;
-#X connect 71 0 64 0;
+#X connect 69 0 60 0;
+#X connect 70 0 63 0;

@@ -1,1 +1,1 @@
-This folder holds all the .wav files that the `sq/record~` object creates.
+This folder holds all the .wav files that the `sq/record~` object records to.
