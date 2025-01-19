@@ -1,4 +1,4 @@
-#N canvas 10 35 2540 1285 10;
+#N canvas 1285 35 1265 1285 10;
 #X obj 400 540 - 1;
 #X obj 400 600 phasor~;
 #X obj 600 730 wrap~;
