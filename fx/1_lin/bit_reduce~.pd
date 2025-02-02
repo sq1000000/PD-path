@@ -1,73 +1,73 @@
-#N canvas 462 180 1279 662 10;
-#X obj 200 100 inlet~;
-#X obj 200 1010 outlet~;
-#X obj 250 600 expr~ round($v1 / $f2);
-#X obj 250 660 *~;
-#X obj 400 506 expr pow(2 \, $f1) - 1;
-#X floatatom 400 531 5 0 0 0 - - -, f 5;
-#X obj 400 555 expr 1 / $f1;
-#X floatatom 400 580 12 0 0 0 - - -, f 12;
-#X text 450 531 <- resolution;
-#X text 450 482 <- bit depth;
-#X floatatom 400 230 5 0 0 0 - - -, f 5;
-#X obj 400 260 hradio 15 0 0 31 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 30;
-#X msg 400 360 2;
-#X obj 2200 610 f;
-#X msg 430 360 2.1;
-#X msg 460 360 2.2;
-#X msg 490 360 2.3;
-#X msg 520 360 2.4;
-#X msg 550 360 2.5;
-#X msg 580 360 2.7;
-#X msg 610 360 2.9;
-#X msg 640 360 3.1;
-#X msg 670 360 3.3;
-#X msg 700 360 3.5;
-#X msg 730 360 3.8;
-#X msg 760 360 4.1;
-#X msg 790 360 4.4;
-#X msg 820 360 4.7;
-#X msg 850 360 5.1;
-#X msg 880 360 5.5;
-#X msg 910 360 5.9;
-#X msg 940 360 6.4;
-#X msg 970 360 6.9;
-#X msg 1000 360 7.4;
-#X msg 1030 360 8;
-#X msg 1060 360 8.6;
-#X msg 1090 360 9.3;
-#X msg 1120 360 9.9;
-#X msg 1150 360 10.7;
-#X msg 1190 360 11.4;
-#X msg 1230 360 12;
-#X msg 1260 360 13;
-#X msg 1290 360 14;
-#X msg 1320 360 15;
-#X msg 1350 360 16;
-#X obj 400 290 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+#N canvas 1285 35 1265 1288 10;
+#X obj 200 200 inlet~;
+#X obj 200 1100 outlet~;
+#X obj 250 710 expr~ round($v1 / $f2);
+#X obj 250 750 *~;
+#X obj 400 606 expr pow(2 \, $f1) - 1;
+#X floatatom 400 631 5 0 0 0 - - -, f 5;
+#X obj 400 655 expr 1 / $f1;
+#X floatatom 400 680 12 0 0 0 - - -, f 12;
+#X text 450 631 <- resolution;
+#X text 450 582 <- bit depth;
+#X floatatom 400 330 5 0 0 0 - - -, f 5;
+#X obj 400 360 hradio 15 0 0 31 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X msg 400 460 2;
+#X obj 2200 710 f;
+#X msg 430 460 2.1;
+#X msg 460 460 2.2;
+#X msg 490 460 2.3;
+#X msg 520 460 2.4;
+#X msg 550 460 2.5;
+#X msg 580 460 2.7;
+#X msg 610 460 2.9;
+#X msg 640 460 3.1;
+#X msg 670 460 3.3;
+#X msg 700 460 3.5;
+#X msg 730 460 3.8;
+#X msg 760 460 4.1;
+#X msg 790 460 4.4;
+#X msg 820 460 4.7;
+#X msg 850 460 5.1;
+#X msg 880 460 5.5;
+#X msg 910 460 5.9;
+#X msg 940 460 6.4;
+#X msg 970 460 6.9;
+#X msg 1000 460 7.4;
+#X msg 1030 460 8;
+#X msg 1060 460 8.6;
+#X msg 1090 460 9.3;
+#X msg 1120 460 9.9;
+#X msg 1150 460 10.7;
+#X msg 1190 460 11.4;
+#X msg 1230 460 12;
+#X msg 1260 460 13;
+#X msg 1290 460 14;
+#X msg 1320 460 15;
+#X msg 1350 460 16;
+#X obj 400 390 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 19 20 21 22 23 24 25 26 27 28 29 30 31;
-#X obj 400 100 inlet;
-#X obj 400 200 int;
-#X floatatom 400 480 6 0 0 0 - - -, f 6;
-#X text 700 540 this abstraction is a bitcruncher;
-#X text 700 700 tutorial here: https://www.youtube.com/watch?v=YmSQ-AMS860
+#X obj 400 200 inlet;
+#X obj 400 300 int;
+#X floatatom 400 580 6 0 0 0 - - -, f 6;
+#X text 200 100 this abstraction is a bitcruncher;
+#X text 700 100 tutorial here: https://www.youtube.com/watch?v=YmSQ-AMS860
 ;
-#X obj 400 170 sq/logic/map 0 127 31 0;
-#X obj 600 100 loadbang;
-#X obj 600 200 float 31;
-#X text 700 600 I tried to copy the knob progression from the terminal/BITS
+#X obj 400 270 sq/logic/map 0 127 31 0;
+#X obj 600 200 loadbang;
+#X obj 600 300 float 31;
+#X obj 200 900 sq/logic/bypass~;
+#X obj 300 800 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 127 127;
+#X text 200 130 I tried to copy the knob progression from the terminal/BITS
 effect on the OP-1 Field \, but it's not algorithmically linear \,
-so I had to make all the boxes you see above. Oh \, also \, I made
-16 bit a passthrough because at that point \, you might as well be
-using 32 bit or whatever puredata uses these days;
-#X obj 200 780 sq/logic/bypass~;
-#X obj 300 700 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 8.5;
+so I had to make all the boxes you see. Oh \, also \, I made 16 bit
+a passthrough because at that point \, you might as well be using 32
+bit or whatever puredata uses these days, f 78;
 #X connect 0 0 2 0;
-#X connect 0 0 55 0;
+#X connect 0 0 54 0;
 #X connect 2 0 3 0;
-#X connect 3 0 55 1;
+#X connect 3 0 54 1;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -140,11 +140,11 @@ using 32 bit or whatever puredata uses these days;
 #X connect 45 29 43 0;
 #X connect 45 30 44 0;
 #X connect 46 0 51 0;
-#X connect 46 0 56 0;
+#X connect 46 0 55 0;
 #X connect 47 0 10 0;
 #X connect 48 0 4 0;
 #X connect 51 0 47 0;
 #X connect 52 0 53 0;
 #X connect 53 0 10 0;
-#X connect 55 0 1 0;
-#X connect 56 0 55 2;
+#X connect 54 0 1 0;
+#X connect 55 0 54 2;

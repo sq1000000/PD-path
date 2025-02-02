@@ -1,0 +1,58 @@
+#N canvas 1285 25 1265 1305 10;
+#X obj 200 200 inlet~;
+#X obj 200 1100 outlet~;
+#X obj 400 200 inlet;
+#X obj 300 700 clip~;
+#X obj 400 500 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 400 520 5 0 0 0 - - -, f 5;
+#X obj 600 500 hsl 128 15 1 -1 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 600 520 5 0 0 0 - - -, f 5;
+#X obj 600 200 inlet;
+#X obj 600 400 sq/rmp/map 0 127 1 -1;
+#X obj 400 400 sq/rmp/map 0 127 -1 1;
+#X text 700 100 tutorial (kinda): https://guitarextended.wordpress.com/2011/12/28/simple-fuzz-effect-with-pure-data/
+;
+#X obj 800 380 loadbang;
+#X msg 800 420 -1;
+#X msg 850 420 1;
+#X text 600 600 this abstraction feels like it SHOULD only have one
+inlet \, because both sliders sound like they're doing the same thing
+\, but if you look with an oscilloscope \, you'll find that's not exactly
+true!;
+#X obj 200 800 sq/logic/bypass~;
+#X obj 300 400 +;
+#X floatatom 300 440 5 0 0 0 - - -, f 5;
+#X obj 300 360 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 900 1510 f;
+#X text 400 800 this abstraction is sort of flawed. with all my abstractions
+\, I attempt to make them 100% passthrough with all the sliders down.
+but I can't accomlish that with this one. maybe someday I'll revisit
+this file and add a system that divides the sound into the 1 range
+(so the clip object can utilize it) \, then it'll multiply the range
+\, but until then \, I have to use the bypass object thing, f 82;
+#X text 200 100 this abstraction clips the incoming audio;
+#X connect 0 0 16 0;
+#X connect 0 0 3 0;
+#X connect 2 0 10 0;
+#X connect 2 0 17 0;
+#X connect 3 0 16 1;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 7 0;
+#X connect 7 0 3 2;
+#X connect 8 0 9 0;
+#X connect 8 0 17 1;
+#X connect 8 0 19 0;
+#X connect 9 0 6 0;
+#X connect 10 0 4 0;
+#X connect 12 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 4 0;
+#X connect 14 0 6 0;
+#X connect 16 0 1 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 2;
+#X connect 19 0 17 0;

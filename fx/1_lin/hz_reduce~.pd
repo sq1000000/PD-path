@@ -1,64 +1,64 @@
-#N canvas 1281 28 1279 1343 12;
-#X obj 160 800 samphold~;
-#X obj 100 400 inlet~;
-#X obj 100 1200 outlet~;
-#X obj 400 560 phasor~ 20000;
-#X text 450 532 <- bit depth;
-#X floatatom 400 240 5 0 0 0 - - -, f 5;
-#X obj 400 270 hradio 15 0 0 34 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 4;
-#X obj 2433 1282 f;
-#X obj 400 110 inlet;
-#X obj 400 210 int;
-#X floatatom 400 530 6 0 0 0 - - -, f 6;
-#X obj 600 110 loadbang;
-#X msg 400 410 100;
-#X msg 429 410 150;
-#X msg 458 410 220;
-#X msg 487 410 310;
-#X msg 516 410 410;
-#X msg 545 410 540;
-#X msg 574 410 700;
-#X msg 603 410 870;
-#X msg 632 410 1000;
-#X msg 668 410 1300;
-#X msg 704 410 1500;
-#X msg 740 410 1800;
-#X msg 776 410 2200;
-#X msg 812 410 2600;
-#X msg 848 410 3000;
-#X msg 884 410 3400;
-#X msg 920 410 4000;
-#X msg 956 410 4500;
-#X msg 992 410 5100;
-#X msg 1028 410 5800;
-#X msg 1064 410 6500;
-#X msg 1100 410 7200;
-#X msg 1136 410 8100;
-#X msg 1172 410 8900;
-#X msg 1208 410 9900;
-#X msg 1244 410 10900;
-#X msg 1287 410 102000;
-#X msg 1337 410 13100;
-#X msg 1380 410 14300;
-#X msg 1423 410 15600;
-#X msg 1466 410 17000;
-#X msg 1509 410 18400;
-#X msg 1552 410 19900;
-#X msg 1595 410 20000;
-#X obj 400 340 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+#N canvas 1281 25 1279 1305 12;
+#X obj 300 910 samphold~;
+#X obj 200 200 inlet~;
+#X obj 200 1290 outlet~;
+#X obj 500 650 phasor~ 20000;
+#X text 550 622 <- bit depth;
+#X floatatom 500 330 5 0 0 0 - - -, f 5;
+#X obj 500 360 hradio 15 0 0 34 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 33;
+#X obj 2533 1372 f;
+#X obj 500 200 inlet;
+#X obj 500 300 int;
+#X floatatom 500 620 6 0 0 0 - - -, f 6;
+#X obj 700 200 loadbang;
+#X msg 500 500 100;
+#X msg 529 500 150;
+#X msg 558 500 220;
+#X msg 587 500 310;
+#X msg 616 500 410;
+#X msg 645 500 540;
+#X msg 674 500 700;
+#X msg 703 500 870;
+#X msg 732 500 1000;
+#X msg 768 500 1300;
+#X msg 804 500 1500;
+#X msg 840 500 1800;
+#X msg 876 500 2200;
+#X msg 912 500 2600;
+#X msg 948 500 3000;
+#X msg 984 500 3400;
+#X msg 1020 500 4000;
+#X msg 1056 500 4500;
+#X msg 1092 500 5100;
+#X msg 1128 500 5800;
+#X msg 1164 500 6500;
+#X msg 1200 500 7200;
+#X msg 1236 500 8100;
+#X msg 1272 500 8900;
+#X msg 1308 500 9900;
+#X msg 1344 500 10900;
+#X msg 1387 500 102000;
+#X msg 1437 500 13100;
+#X msg 1480 500 14300;
+#X msg 1523 500 15600;
+#X msg 1566 500 17000;
+#X msg 1609 500 18400;
+#X msg 1652 500 19900;
+#X msg 1695 500 20000;
+#X obj 500 430 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33;
-#X obj 100 980 sq/logic/bypass~;
-#X obj 310 900 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 53.5;
-#X obj 400 180 sq/logic/map 0 127 33 0;
-#X obj 600 210 float 33;
-#X floatatom 310 180 5 0 0 0 - - -, f 5;
-#X text 800 100 this abstraction is HZ based bitcruncher;
-#X text 240 980 <- there's still some noise at the highest possible
+#X obj 200 1100 sq/logic/bypass~;
+#X obj 410 990 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 94.5;
+#X obj 500 270 sq/logic/map 0 127 33 0;
+#X obj 700 300 float 33;
+#X floatatom 410 270 5 0 0 0 - - -, f 5;
+#X text 200 100 this abstraction is HZ based bitcruncher;
+#X text 330 1100 <- there's still some noise at the highest possible
 bitcruncher setting \, so I made this thing to just disable the filter
 when the knob is down all the way;
-#X text 800 160 I tried to copy the knob progression from the terminal/HZ
+#X text 200 130 I tried to copy the knob progression from the terminal/HZ
 effect on the OP-1 Field \, but it's not algorithmically linear \,
 so I had to make all the boxes you see below;
 #X connect 0 0 47 1;

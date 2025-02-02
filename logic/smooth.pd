@@ -1,4 +1,4 @@
-#N canvas 10 35 1265 1285 10;
+#N canvas 10 35 1265 1288 10;
 #X floatatom 100 300 0 0 0 0 - - -;
 #X obj 100 360 pack 0 200;
 #X obj 100 330 max 0;
@@ -17,5 +17,5 @@ numbers. it's nice to have sometimes;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 7 0 0 0;
-#X connect 8 0 0 0;
+#X connect 8 0 1 1;
 #X connect 9 0 8 0;

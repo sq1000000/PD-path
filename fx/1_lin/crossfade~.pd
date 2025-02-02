@@ -1,7 +1,0 @@
-#N canvas 0 25 450 303 12;
-#X obj 100 100 inlet~;
-#X obj 170 110 inlet~;
-#X obj 240 100 inlet~;
-#X obj 300 100 inlet~;
-#X obj 360 100 inlet;
-#X obj 410 100 inlet;

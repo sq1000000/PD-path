@@ -1,0 +1,25 @@
+#N canvas 1285 35 1265 1285 10;
+#X obj 200 200 inlet~;
+#X obj 200 440 outlet~;
+#X obj 400 260 hsl 128 15 0 0.99 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 9150 1;
+#X floatatom 400 310 5 0 0 0 - - -, f 5;
+#X text 200 100 simple delay abstraction made wih a DSP loop;
+#X obj 300 360 *~ 0;
+#X obj 400 200 inlet;
+#X obj 400 230 sq/rmp/map 0 127 0 0.99;
+#X text 600 100 tutorial here: https://guitarextended.wordpress.com/2011/12/12/creating-a-simple-effect-with-pd/
+;
+#X text 600 200 the download link isn't working on the tutorial \,
+so I ended up having to download from here: https://github.com/EMC23/TrumBela/blob/ab022cbeeb2213b843df01fefde832b47f622c42/GuitarExtended-SimpleDelay.pd
+;
+#X obj 200 400 delread~ delayname 500;
+#X obj 200 300 delwrite~ delayname 500;
+#X connect 0 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 1;
+#X connect 5 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 10 0 5 0;
+#X connect 10 0 1 0;

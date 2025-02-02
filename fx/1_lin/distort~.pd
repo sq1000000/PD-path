@@ -1,23 +1,24 @@
-#N canvas 1179 473 1278 665 12;
-#X obj 100 100 inlet~;
-#X obj 200 300 osc~;
-#X obj 100 650 outlet~;
-#X obj 300 200 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#N canvas 1179 473 1278 668 12;
+#X obj 200 200 inlet~;
+#X obj 300 400 osc~;
+#X obj 200 750 outlet~;
+#X obj 400 300 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 300 400 hsl 128 15 0 1.6 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#X obj 400 500 hsl 128 15 0 1.6 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 200 500 *~ 1;
-#X floatatom 300 440 5 0 0 0 - - -, f 5;
-#X floatatom 300 240 5 0 0 0 - - -, f 5;
-#X obj 900 100 inlet;
-#X text 190 30 this abstaction is a basic distortion filter thing;
-#X text 450 200 <- IDK how this works. All I know is that this range
+#X obj 300 600 *~ 1;
+#X floatatom 400 540 5 0 0 0 - - -, f 5;
+#X floatatom 400 340 5 0 0 0 - - -, f 5;
+#X obj 1000 200 inlet;
+#X text 200 100 this abstaction is a basic distortion filter thing
+;
+#X text 550 300 <- IDK how this works. All I know is that this range
 is the only range that matters;
-#X obj 900 280 sq/logic/map 0 64 0 1.6;
-#X text 460 400 <- this is a weird one. 0-1 are audible \, but after
+#X obj 1000 380 sq/logic/map 0 64 0 1.6;
+#X text 560 500 <- this is a weird one. 0-1 are audible \, but after
 1 (1-1.6) \, the audio gets harder to hear \, but if you pass the audio
 through some other filter later \, it'll hear it just fine;
-#X text 300 100 try pairing it with the oscilloscope. for some reason
+#X text 200 140 try pairing it with the oscilloscope. for some reason
 \, it moves the entire image up or down;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;

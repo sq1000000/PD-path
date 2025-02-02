@@ -1,0 +1,75 @@
+#N canvas 1285 35 1265 1288 10;
+#X obj 200 1100 vcf~;
+#X floatatom 600 940 5 0 0 0 - - -, f 5;
+#X obj 600 800 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 5950 1;
+#X obj 300 440 +~ 1;
+#X obj 300 470 *~ 0.5;
+#X obj 300 409 osc~ 2;
+#X obj 700 400 hsl 128 15 700 6000 0 0 empty empty empty -2 -8 0 10
+#fcfcfc #000000 #000000 2550 1;
+#X obj 700 500 hsl 128 15 0 700 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 700 520 6 0 0 0 - - -, f 6;
+#X floatatom 400 630 6 0 0 0 - - -, f 6;
+#X obj 400 600 -;
+#X obj 300 800 +~ 200;
+#X obj 300 700 *~ 1500;
+#X obj 600 200 loadbang;
+#X msg 600 730 5.3;
+#X obj 200 200 inlet~;
+#X obj 200 1200 outlet~;
+#X obj 300 200 inlet;
+#X obj 700 700 inlet;
+#X msg 630 340 5000;
+#X msg 600 340 10;
+#X obj 400 550 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 600 700 loadbang;
+#X obj 700 730 sq/rmp/map 0 127 0 20;
+#X floatatom 300 360 5 0 0 0 - - -, f 5;
+#X floatatom 700 427 5 0 0 0 - - -, f 5;
+#X obj 300 260 sq/rmp/map 0 127 0 15;
+#X text 640 940 <- "Q";
+#X text 840 400 <- Maximum of the freq. range;
+#X text 840 500 <- Minimum of the freq. range;
+#X text 250 1100 <- Voltage-Controlled band-pass filter;
+#X text 350 410 <- LFO (Low-Frequency Oscillator);
+#X text 700 100 tutorial here: https://guitarextended.wordpress.com/2012/01/07/wha-wha-auto-with-pure-data/
+;
+#X text 700 200 the download link isn't working on the tutorial \,
+so I ended up having to download from here: https://github.com/EMC23/TrumBela/blob/ab022cbeeb2213b843df01fefde832b47f622c42/fx_autowha.pd
+;
+#X text 200 100 this is a "wha-wha" filter \, created with the vcf~
+object;
+#X text 700 350 maybe later I can expand this abstraction with inlets
+to control these two things;
+#X connect 0 0 16 0;
+#X connect 1 0 0 2;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 12 0;
+#X connect 5 0 3 0;
+#X connect 6 0 25 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 1;
+#X connect 8 0 10 1;
+#X connect 8 0 21 0;
+#X connect 9 0 12 1;
+#X connect 10 0 9 0;
+#X connect 11 0 0 1;
+#X connect 12 0 11 0;
+#X connect 13 0 19 0;
+#X connect 13 0 20 0;
+#X connect 14 0 2 0;
+#X connect 15 0 0 0;
+#X connect 17 0 26 0;
+#X connect 18 0 23 0;
+#X connect 19 0 6 0;
+#X connect 20 0 7 0;
+#X connect 21 0 10 0;
+#X connect 22 0 14 0;
+#X connect 23 0 2 0;
+#X connect 24 0 5 0;
+#X connect 25 0 10 0;
+#X connect 26 0 24 0;
