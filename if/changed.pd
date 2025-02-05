@@ -1,10 +1,10 @@
-#N canvas 334 64 1278 1330 10;
-#X obj 300 500 outlet;
-#X obj 300 200 inlet;
-#X obj 1850 700 f;
-#X floatatom 300 300 5 0 0 0 - - -, f 5;
-#X obj 300 400 change;
-#X text 300 100 sends a bang or the input number if the input number
+#N canvas 334 25 1278 1305 10;
+#X obj 200 400 outlet;
+#X obj 200 200 inlet;
+#X obj 1750 700 f;
+#X floatatom 200 260 5 0 0 0 - - -, f 5;
+#X obj 200 330 change;
+#X text 200 100 sends a bang or the input number if the input number
 is differen than last time. I know this is cheap \, considering it's
 just a 'change' block alias \, but I don't care;
 #X connect 1 0 3 0;

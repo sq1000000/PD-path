@@ -1,54 +1,53 @@
-#N canvas 43 96 955 767 12;
-#X obj 200 300 inlet;
-#X obj 200 600 sq/if/equal_to;
-#X obj 300 300 inlet;
-#X floatatom 200 500 5 0 0 0 - - -, f 5;
-#X floatatom 300 500 5 0 0 0 - - -, f 5;
-#X obj 730 1060 f;
-#X obj 200 800 outlet;
-#X obj 300 400 pipe;
+#N canvas 43 96 955 770 12;
+#X obj 200 200 inlet;
+#X obj 200 500 sq/if/equal_to;
+#X obj 300 200 inlet;
+#X floatatom 200 400 5 0 0 0 - - -, f 5;
+#X floatatom 300 400 5 0 0 0 - - -, f 5;
+#X obj 200 700 outlet;
+#X obj 300 300 pipe;
 #X text 200 100 this abstraction sends a toggle/bang when the input
 number hasn't changed for a many miliseconds as the second inlet describes
 ;
-#X floatatom 200 700 5 0 0 0 - - -, f 5;
-#X obj 300 880 outlet;
-#X text 350 300 <--millisecond delay;
-#X text 200 200 I had a lot of other names in mind for this abstraction.
+#X floatatom 200 600 5 0 0 0 - - -, f 5;
+#X obj 300 780 outlet;
+#X text 350 200 <--millisecond delay;
+#X text 700 100 I had a lot of other names in mind for this abstraction.
 perhaps 'stale_for' or 'stagnant_for'. maybe if aliases are a thing
 in the future \, I'll add those as aliases, f 60;
-#X text 360 880 <-- toggles box if change has happened in X time;
-#X text 260 800 <-- toggles box if change hasn't happened in X time
+#X text 360 780 <-- toggles box if change has happened in X time;
+#X text 260 700 <-- toggles box if change hasn't happened in X time
 ;
-#X text 340 400 <-- applys the delay;
-#X obj 200 640 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X text 340 300 <-- applys the delay;
+#X obj 200 540 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X floatatom 300 700 5 0 0 0 - - -, f 5;
-#X obj 300 640 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X floatatom 300 600 5 0 0 0 - - -, f 5;
+#X obj 300 540 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 200 750 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
-#X obj 300 670 float 0;
-#X obj 200 670 float 1;
-#X obj 300 830 sq/rmp/bitflip;
-#X text 500 500 there's a flaw here. ideally \, it would compare the
+#X obj 200 650 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 300 570 float 0;
+#X obj 200 570 float 1;
+#X obj 300 730 sq/rmp/bitflip;
+#X text 500 400 there's a flaw here. ideally \, it would compare the
 current number to all delayed states \, but in this case \, it sends
 the toggle when the delayed number matches the input \, which doesn't
 nessesarily mean that the number hasn't changed.maybe someday I'll
 fix this;
 #X connect 0 0 3 0;
-#X connect 0 0 7 0;
-#X connect 1 0 16 0;
-#X connect 1 1 18 0;
-#X connect 2 0 7 1;
+#X connect 0 0 6 0;
+#X connect 1 0 15 0;
+#X connect 1 1 17 0;
+#X connect 2 0 6 1;
 #X connect 3 0 1 1;
 #X connect 4 0 1 2;
-#X connect 7 0 4 0;
-#X connect 9 0 19 0;
-#X connect 16 0 21 0;
+#X connect 6 0 4 0;
+#X connect 8 0 18 0;
+#X connect 15 0 20 0;
+#X connect 16 0 18 0;
 #X connect 17 0 19 0;
-#X connect 18 0 20 0;
-#X connect 19 0 6 0;
-#X connect 19 0 22 0;
-#X connect 20 0 17 0;
+#X connect 18 0 5 0;
+#X connect 18 0 21 0;
+#X connect 19 0 16 0;
+#X connect 20 0 8 0;
 #X connect 21 0 9 0;
-#X connect 22 0 10 0;

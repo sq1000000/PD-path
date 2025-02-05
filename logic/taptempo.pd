@@ -1,30 +1,30 @@
-#N canvas 1002 196 800 849 10;
-#X obj 200 127 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#N canvas 433 306 762 918 12;
+#X obj 200 227 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 200 150 t b b;
-#X obj 200 210 moses 3000;
-#X floatatom 200 240 5 0 0 0 - - -, f 5;
-#X msg 230 300 add2 \$1;
-#X obj 230 420 list length;
-#X obj 230 460 >= 4;
-#X obj 200 500 spigot;
-#X obj 430 370 > 4;
-#X obj 400 400 spigot;
-#X obj 400 440 list prepend set;
-#X obj 400 420 list-delete 0 1;
-#X obj 200 270 t b f;
-#X obj 400 460 list trim;
-#X msg 200 350 154.994 164.602 177.778 187.3;
-#X obj 200 370 t a a a;
-#X obj 200 600 unpack f f f f;
-#X floatatom 200 660 5 0 0 1 time_between_bangs - -, f 5;
-#X obj 200 630 expr ($f1+$f2+$f3+$f4)/16;
-#X obj 200 180 realtime;
-#X floatatom 200 720 5 0 0 1 detected_bpm - -, f 5;
-#X obj 200 690 expr (60000/$f1)/4;
-#X obj 200 100 inlet;
-#X obj 200 750 outlet;
-#X text 400 100 taken from here:https://github.com/defaultxr/xr-abstractions/blob/016e635e2a20a3efdd8ac4b6e1657619df553a2a/seq/taptempo.pd
+#X obj 200 250 t b b;
+#X obj 200 310 moses 3000;
+#X floatatom 200 340 5 0 0 0 - - -, f 5;
+#X msg 260 410 add2 \$1;
+#X obj 260 550 list length;
+#X obj 260 640 >= 4;
+#X obj 200 680 spigot;
+#X obj 460 540 > 4;
+#X obj 400 580 spigot;
+#X obj 400 640 list prepend set;
+#X obj 400 610 list-delete 0 1;
+#X obj 200 370 t b f;
+#X obj 400 670 list trim;
+#X msg 200 450 228.454 232.498 461.259 231.907;
+#X obj 200 470 t a a a;
+#X obj 200 740 unpack f f f f;
+#X floatatom 200 820 5 0 0 1 time_between_bangs - -, f 5;
+#X obj 200 780 expr ($f1+$f2+$f3+$f4)/16;
+#X obj 200 280 realtime;
+#X floatatom 200 900 5 0 0 1 detected_bpm - -, f 5;
+#X obj 200 860 expr (60000/$f1)/4;
+#X obj 200 200 inlet;
+#X obj 200 990 outlet;
+#X text 200 100 taken from here:https://github.com/defaultxr/xr-abstractions/blob/016e635e2a20a3efdd8ac4b6e1657619df553a2a/seq/taptempo.pd
 ;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
@@ -57,4 +57,3 @@
 #X connect 20 0 23 0;
 #X connect 21 0 20 0;
 #X connect 22 0 0 0;
-#X coords 0 -1 1 1 67 17 1 101 177;

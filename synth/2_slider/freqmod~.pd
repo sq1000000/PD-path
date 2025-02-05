@@ -1,35 +1,35 @@
-#N canvas 1281 28 1279 665 10;
-#X obj 4628 831 f;
-#X obj 1898 2221 f;
-#X obj 200 680 outlet~;
-#X floatatom 200 300 5 0 0 0 - - -, f 5;
-#X obj 200 340 osc~;
-#X obj 200 380 *~;
-#X obj 200 460 +~;
-#X obj 200 500 osc~;
-#X text 230 460 Carrier;
-#X floatatom 240 420 5 0 0 1 Carr_Freq - -, f 5;
-#X obj 400 180 hsl 128 15 50 2000 0 0 empty empty empty -2 -8 0 10
-#a8ffab #000000 #000000 2100 1;
-#X obj 400 250 *;
-#X floatatom 600 220 5 0 0 0 - - -, f 5;
-#X obj 600 190 hsl 128 15 0 2 0 1 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 3850 1;
-#X text 240 320 Mod_Amp;
-#X text 400 480 tutorial: https://www.youtube.com/watch?v=RX3gD7Awrpc
+#N canvas 1281 28 1279 668 10;
+#X obj 4628 931 f;
+#X obj 1898 2321 f;
+#X obj 200 700 outlet~;
+#X floatatom 200 400 5 0 0 0 - - -, f 5;
+#X obj 200 440 osc~;
+#X obj 200 480 *~;
+#X obj 200 560 +~;
+#X obj 200 600 osc~;
+#X text 230 560 Carrier;
+#X floatatom 240 520 5 0 0 1 Carr_Freq - -, f 5;
+#X obj 200 280 hsl 128 15 50 2000 0 0 empty empty empty -2 -8 0 10
+#a8ffab #000000 #000000 0 1;
+#X obj 200 350 *;
+#X floatatom 400 320 5 0 0 0 - - -, f 5;
+#X obj 400 290 hsl 128 15 0 2 0 1 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6350 1;
+#X text 240 420 Mod_Amp;
+#X text 700 100 tutorial: https://www.youtube.com/watch?v=RX3gD7Awrpc
 ;
-#X obj 600 100 loadbang;
-#X obj 600 130 float 1;
-#X obj 400 100 inlet;
-#X obj 400 130 sq/logic/map 0 127 50 2000;
-#X obj 900 190 hsl 128 15 0 5000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 10300 1;
-#X floatatom 900 213 5 0 0 0 - - -, f 5;
-#X text 400 400 I originally intended for this to be an audio filter
+#X obj 400 200 loadbang;
+#X obj 400 230 float 1;
+#X obj 200 200 inlet;
+#X obj 200 230 sq/logic/map 0 127 50 2000;
+#X obj 600 290 hsl 128 15 0 5000 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 600 313 5 0 0 0 - - -, f 5;
+#X text 200 100 I originally intended for this to be an audio filter
 ;
-#X obj 900 100 inlet;
-#X obj 900 125 sq/logic/map 0 127 0 5000;
-#X text 400 440 this doesn't sound very good \, but it works I guess
+#X obj 600 200 inlet;
+#X obj 600 225 sq/logic/map 0 127 0 5000;
+#X text 200 130 this doesn't sound very good \, but it works I guess
 haha;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;

@@ -1,8 +1,8 @@
-#N canvas 242 274 1093 778 12;
+#N canvas 242 274 1093 781 12;
 #X obj 200 200 inlet;
 #X obj 300 200 inlet;
 #X obj 200 500 *;
-#X floatatom 300 240 5 0 0 0 - - -, f 5;
+#X floatatom 300 250 5 0 0 0 - - -, f 5;
 #X floatatom 300 340 5 0 0 0 - - -, f 5;
 #X obj 300 300 clip 0 1;
 #X obj 200 600 outlet;
@@ -10,7 +10,7 @@
 #X obj 300 500 *;
 #X obj 300 600 outlet;
 #X obj 400 300 float 0;
-#X obj 400 200 loadbang;
+#X obj 400 250 loadbang;
 #X text 360 600 <-- the second outlet does the opposite. it passes
 if the attached toggle box is inactive;
 #X text 200 100 this simple abstraction lets numbers pass though if

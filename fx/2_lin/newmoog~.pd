@@ -1,31 +1,31 @@
-#N canvas 964 268 1277 1341 12;
-#X obj 200 780 moog~;
-#X floatatom 652 462 5 0 0 0 - - -, f 5;
-#X floatatom 480 590 5 0 0 0 - - -, f 5;
-#X msg 100 700 reset;
-#X obj 400 610 +~ 1;
-#X floatatom 400 540 5 0 0 0 - - -, f 5;
-#X floatatom 480 620 5 0 0 0 - - -, f 5;
-#X obj 400 580 osc~ 0.25;
-#X obj 400 640 *~ 2000;
-#X obj 652 662 sig~ 3;
-#X text 750 1088 A signal controlled "moog" resonant lowpass;
-#X text 692 632 Q (1-4);
-#X text 846 1129 resonance freq modulation;
-#X obj 400 300 inlet;
-#X obj 652 302 inlet;
-#X floatatom 400 360 5 0 0 0 - - -, f 5;
+#N canvas 964 25 1277 1305 12;
+#X obj 200 680 moog~;
 #X floatatom 652 362 5 0 0 0 - - -, f 5;
-#X obj 200 1040 outlet~;
-#X obj 400 500 * 1;
-#X floatatom 400 460 5 0 0 0 - - -, f 5;
-#X obj 652 402 sq/logic/map 0 127 1 4;
-#X obj 200 300 inlet~;
-#X obj 400 400 sq/logic/map 0 127 0 50;
-#X obj 400 670 +~ 100;
-#X text 600 800 I tried to make a nice implentation of the moog~ object
+#X floatatom 480 490 5 0 0 0 - - -, f 5;
+#X msg 100 600 reset;
+#X obj 400 510 +~ 1;
+#X floatatom 400 440 5 0 0 0 - - -, f 5;
+#X floatatom 480 520 5 0 0 0 - - -, f 5;
+#X obj 400 480 osc~ 0.25;
+#X obj 400 540 *~ 2000;
+#X obj 652 562 sig~ 3;
+#X text 600 700 A signal controlled "moog" resonant lowpass;
+#X text 692 532 Q (1-4);
+#X text 696 741 resonance freq modulation;
+#X obj 400 200 inlet;
+#X obj 652 202 inlet;
+#X floatatom 400 260 5 0 0 0 - - -, f 5;
+#X floatatom 652 262 5 0 0 0 - - -, f 5;
+#X obj 200 940 outlet~;
+#X obj 400 400 * 1;
+#X floatatom 400 360 5 0 0 0 - - -, f 5;
+#X obj 652 302 sq/logic/map 0 127 1 4;
+#X obj 200 200 inlet~;
+#X obj 400 300 sq/logic/map 0 127 0 50;
+#X obj 400 570 +~ 100;
+#X text 200 100 I tried to make a nice implentation of the moog~ object
 as a filter \, but idk \, I don't really like this;
-#X text 600 880 I suppose I'll keep around if I want to fix it later
+#X text 200 160 I suppose I'll keep around if I want to fix it later
 ;
 #X connect 0 0 17 0;
 #X connect 1 0 9 0;

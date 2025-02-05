@@ -1,0 +1,10 @@
+#N canvas 835 413 706 565 12;
+#X obj 200 200 inlet;
+#X floatatom 200 400 5 0 0 0 - - -, f 5;
+#X obj 200 500 outlet;
+#X obj 200 300 expr 60000 / $f1;
+#X text 200 100 this abstraction converts a duration in milliseconds
+into beats per minute;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;

@@ -1,15 +1,15 @@
-#N canvas 0 28 1278 1343 12;
-#X obj 100 200 inlet~;
-#X obj 500 200 inlet;
-#X obj 200 500 *~ 0;
-#X obj 100 500 *~ 1;
-#X floatatom 200 340 5 0 0 0 - - -, f 5;
-#X obj 100 600 outlet~;
-#X floatatom 500 340 5 0 0 0 - - -, f 5;
-#X obj 500 300 sq/logic/map 0 127 0 1;
+#N canvas 0 25 1278 1305 12;
+#X obj 200 200 inlet~;
+#X obj 600 200 inlet;
+#X obj 300 500 *~ 0;
+#X obj 200 500 *~ 1;
+#X floatatom 300 340 5 0 0 0 - - -, f 5;
 #X obj 200 600 outlet~;
-#X obj 200 300 sq/logic/map 0 127 1 0;
-#X text 100 100 crossfade one stream to two streams with a slider object
+#X floatatom 600 340 5 0 0 0 - - -, f 5;
+#X obj 600 300 sq/logic/map 0 127 0 1;
+#X obj 300 600 outlet~;
+#X obj 300 300 sq/logic/map 0 127 1 0;
+#X text 200 100 crossfade one stream to two streams with a slider object
 with this abstraction;
 #X connect 0 0 3 0;
 #X connect 0 0 2 0;

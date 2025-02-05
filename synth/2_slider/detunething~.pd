@@ -1,9 +1,9 @@
-#N canvas 732 28 730 726 12;
-#X obj 200 180 inlet;
+#N canvas 732 28 730 729 12;
+#X obj 200 200 inlet;
 #X obj 200 700 outlet~;
-#X obj 400 180 inlet;
+#X obj 400 200 inlet;
 #X obj 200 500 osc~;
-#X obj 200 230 sq/logic/map 0 127 75 400;
+#X obj 200 250 sq/logic/map 0 127 75 400;
 #X floatatom 200 380 5 0 0 0 - - -, f 5;
 #X obj 200 600 *~ 0.5;
 #X obj 300 440 +;
@@ -12,7 +12,7 @@
 #X floatatom 300 470 5 0 0 0 - - -, f 5;
 #X obj 300 340 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 400 230 sq/logic/map 0 127 0 500;
+#X obj 400 250 sq/logic/map 0 127 0 500;
 #X text 200 100 not really sure how to describe this one. basically
 it's just two sine waves \, but the second inlet is a modifier to make
 the second one a little different. sort of creates a harmonic effect
