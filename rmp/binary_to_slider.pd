@@ -1,0 +1,8 @@
+#N canvas 1285 35 1265 1291 10;
+#X obj 200 200 inlet;
+#X obj 200 400 outlet;
+#X obj 200 300 * 127;
+#X text 200 100 this abstraction remaps binary values (0 - 1) to slider
+range values (0 - 127), f 73;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

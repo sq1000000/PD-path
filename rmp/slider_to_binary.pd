@@ -1,0 +1,11 @@
+#N canvas 1285 35 1265 1288 10;
+#X obj 200 200 inlet;
+#X obj 200 400 outlet;
+#X obj 200 300 / 127;
+#X text 200 100 this abstraction remaps slider values (0 - 127) to
+a single digit range (0 - 1), f 73;
+#X text 200 140 despite having binary in the name of the abstraction
+\, the output number doesn't just jump from 0 to 1 \, it goes through
+a decimal range;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
