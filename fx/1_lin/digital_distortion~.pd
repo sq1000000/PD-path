@@ -1,0 +1,65 @@
+#N canvas 641 28 1279 1343 12;
+#X obj 240 240 delwrite~ \$0-audio 200;
+#X obj 300 300 loadbang;
+#X obj 300 400 -~ 1;
+#X obj 300 430 *~ 20;
+#X msg 300 330 1;
+#X obj 200 190 inlet~;
+#X obj 200 1000 outlet~;
+#X floatatom 500 280 5 0 0 0 - - -, f 5;
+#X obj 500 200 inlet;
+#X text 200 100 this was supposed to be a pitch bend abstraction \,
+but I accidently made this weird digital distortion thing. I think
+I'll keep it around;
+#X obj 200 920 sq/logic/bypass~;
+#X obj 500 240 sq/logic/map 0 127 1 5;
+#X text 560 280 <-- once you push this into the hundreds \, it almost
+becomes its own sort of instrument;
+#X obj 300 460 phasor~;
+#X obj 300 600 +~ 0.5;
+#X obj 300 630 wrap~;
+#X obj 300 660 -~ 0.5;
+#X obj 300 690 *~ 0.5;
+#X obj 300 720 cos~;
+#X obj 300 750 *~;
+#X obj 400 600 *~ 50;
+#X obj 400 630 vd~ \$0-audio;
+#X obj 300 830 +~;
+#X obj 500 600 -~ 0.5;
+#X obj 500 690 *~ 0.5;
+#X obj 500 720 cos~;
+#X obj 500 750 *~;
+#X obj 600 600 *~ 50;
+#X obj 601 656 vd~ \$0-audio;
+#X text 800 100 originally from here:https://github.com/zacharyneveu/Embedded_Audio_Programming/blob/0298030aecfa6d4a3a2fba32e28381558d18baec/PD/project2/pitchshift~.pd#L18
+;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 13 0;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 5 0 10 0;
+#X connect 7 0 2 0;
+#X connect 8 0 10 2;
+#X connect 8 0 11 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 13 0 20 0;
+#X connect 13 0 14 0;
+#X connect 13 0 23 0;
+#X connect 13 0 27 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 1;
+#X connect 22 0 10 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 22 1;
+#X connect 27 0 28 0;
+#X connect 28 0 26 1;

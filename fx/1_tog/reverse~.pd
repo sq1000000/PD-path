@@ -1,4 +1,4 @@
-#N canvas 1285 35 1265 1294 12;
+#N canvas 0 28 1279 1343 12;
 #X floatatom 1000 460 5 0 0 0 - - -, f 5;
 #X obj 1000 430 / 2;
 #X obj 600 500 phasor~;
@@ -31,7 +31,7 @@
 #X obj 1000 280 \$1;
 #X obj 400 200 inlet;
 #X obj 400 400 tgl 17 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X msg 1000 240 200;
 #X obj 1000 200 loadbang;
 #X obj 200 1180 outlet~;
@@ -51,8 +51,8 @@ audio \, but only when the inlet box is toggled;
 #X connect 2 0 16 0;
 #X connect 3 0 4 0;
 #X connect 4 0 15 0;
-#X connect 5 0 8 0;
 #X connect 5 0 13 0;
+#X connect 5 0 8 0;
 #X connect 6 0 2 1;
 #X connect 7 0 5 1;
 #X connect 8 0 9 0;

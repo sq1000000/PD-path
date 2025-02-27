@@ -1,54 +1,54 @@
-#N canvas 136 69 1119 1170 10;
-#X obj 500 500 phasor~;
-#X obj 300 630 cos~;
-#X obj 300 660 +~ 1;
-#X obj 300 690 *~ 0.5;
-#X obj 300 730 *~;
-#X obj 500 630 cos~;
-#X obj 500 660 +~ 1;
-#X obj 500 690 *~ 0.5;
-#X obj 500 730 *~;
-#X obj 700 630 cos~;
-#X obj 700 660 +~ 1;
-#X obj 700 690 *~ 0.5;
-#X obj 700 730 *~;
-#X obj 700 600 +~ 0.66;
-#X obj 300 760 vd~ CHORUS;
-#X obj 500 760 vd~ CHORUS;
-#X obj 700 760 vd~ CHORUS;
-#X obj 500 600 +~ 0.33;
-#X obj 300 780 *~ 0.33;
-#X obj 500 780 *~ 0.33;
-#X obj 700 780 *~ 0.33;
+#N canvas 137 69 1119 1170 10;
+#X obj 600 600 phasor~;
+#X obj 500 730 cos~;
+#X obj 500 760 +~ 1;
+#X obj 500 790 *~ 0.5;
+#X obj 500 830 *~;
+#X obj 600 730 cos~;
+#X obj 600 760 +~ 1;
+#X obj 600 790 *~ 0.5;
+#X obj 600 830 *~;
+#X obj 700 730 cos~;
+#X obj 700 760 +~ 1;
+#X obj 700 790 *~ 0.5;
+#X obj 700 830 *~;
+#X obj 700 700 +~ 0.66;
+#X obj 500 860 vd~ CHORUS;
+#X obj 600 860 vd~ CHORUS;
+#X obj 700 860 vd~ CHORUS;
+#X obj 600 700 +~ 0.33;
+#X obj 500 880 *~ 0.33;
+#X obj 600 880 *~ 0.33;
+#X obj 700 880 *~ 0.33;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array array1 4 float 1 black black;
 #A 0 128 128 128 128;
 #X coords 0 128 3 0 100 70 1;
-#X restore 300 400 graph;
-#X obj 700 400 hsl 128 15 0.5 90 1 1 empty empty depth -2 -8 0 10 #fcfcfc
+#X restore 400 500 graph;
+#X obj 800 500 hsl 128 15 0.5 90 1 1 empty empty depth -2 -8 0 10 #fcfcfc
 #000000 #000000 10604 1;
-#X obj 500 400 hsl 128 15 0.05 1 1 1 speed empty speed -2 -8 0 10 #fcfcfc
+#X obj 600 500 hsl 128 15 0.05 1 1 1 speed empty speed -2 -8 0 10 #fcfcfc
+#000000 #000000 2000 1;
+#X obj 220 250 delwrite~ CHORUS 10000;
+#X obj 200 200 inlet~;
+#X floatatom 800 530 5 0 0 0 - - -, f 5;
+#X floatatom 600 530 5 0 0 0 - - -, f 5;
+#X obj 400 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
-#X obj 120 200 delwrite~ CHORUS 10000;
-#X obj 100 100 inlet~;
-#X floatatom 700 430 5 0 0 0 - - -, f 5;
-#X floatatom 500 430 5 0 0 0 - - -, f 5;
-#X obj 300 200 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 5350 1;
-#X floatatom 300 223 5 0 0 0 - - -, f 5;
-#X obj 500 300 sq/logic/map 0 127 0.005 0.1;
-#X obj 700 300 sq/logic/map 0 127 0.5 90;
-#X obj 100 1100 sq/logic/bypass~;
-#X obj 200 800 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 53.5 53.5;
-#X obj 100 1200 outlet~;
-#X obj 300 100 inlet;
-#X obj 300 600 +~ 0;
-#X text 500 100 a neat chorusing effect. mostly taken from user 'mod'
+#X floatatom 400 323 5 0 0 0 - - -, f 5;
+#X obj 600 400 sq/logic/map 0 127 0.005 0.1;
+#X obj 800 400 sq/logic/map 0 127 0.5 90;
+#X obj 200 1200 sq/logic/bypass~;
+#X obj 300 900 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 53.5;
+#X obj 200 1300 outlet~;
+#X obj 400 200 inlet;
+#X obj 500 700 +~ 0;
+#X text 200 100 a neat chorusing effect. mostly taken from user 'mod'
 on this one pd forum;
-#X text 500 140 https://forum.pdpatchrepo.info/topic/5713/chorus-effect/3
+#X text 200 140 https://forum.pdpatchrepo.info/topic/5713/chorus-effect/3
 ;
-#X text 230 1100 <- I don't like the harsh transition when moving to
+#X text 330 1200 <- I don't like the harsh transition when moving to
 the bypass filter. but I can't find a way to make the chorus thing
 act the same as the input signal ) \; ;
 #X connect 0 0 36 0;

@@ -1,10 +1,10 @@
-#N canvas 10 35 1265 1288 10;
+#N canvas 1281 28 1279 1343 10;
 #X obj 550 400 gemhead;
 #X obj 640 540 *~;
 #X obj 680 540 *~;
 #X obj 550 430 color 0 1 0;
 #X obj 740 330 vsl 15 128 0 30 0 0 empty empty empty 0 -9 0 10 #fcfcfc
-#000000 #000000 3347 1;
+#000000 #000000 847 1;
 #X text 770 370 size;
 #X msg 412 334 draw line;
 #X msg 412 374 draw fill;
@@ -21,18 +21,18 @@ scope'. See more at jerobeamfenderson.net;
 #X obj 740 290 loadbang;
 #X obj 640 100 inlet~;
 #X obj 680 80 inlet~;
-#X obj 1000 470 gemwin;
-#X msg 1080 400 create \, 1;
-#X obj 900 370 loadbang;
-#X obj 1040 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 1100 600 gemwin;
+#X msg 1180 520 create \, 1;
+#X obj 1000 500 loadbang;
+#X obj 1140 490 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1000 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 1100 490 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1000 340 route 0;
-#X obj 1000 310 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#X obj 1100 460 route 0;
+#X obj 1100 430 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X floatatom 740 470 5 0 0 0 - - -, f 5;
-#X obj 1000 280 inlet;
+#X obj 1100 400 inlet;
 #X text 200 100 this is a tool to compare two audio signals with an
 oscilloscope. The tool accepts a toggle to turn on and off the oscilloscope
 window;
@@ -44,8 +44,15 @@ window;
 passthrough outlets -------------------------->;
 #X obj 600 580 scopeXYZ~ 4096;
 #X obj 740 310 float 2;
-#X msg 1000 400 destroy \, 0;
-#X msg 900 400 frame 144;
+#X msg 1100 520 destroy \, 0;
+#X msg 1000 530 frame 144;
+#X obj 868 303 vradio 15 1 0 3 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X floatatom 868 354 5 0 0 0 - - -, f 5;
+#X msg 868 375 reset \, fullscreen \$1 \, create \, 1;
+#X text 889 317 fullscreen on screen 1;
+#X text 889 333 fullscreen on screen 2;
+#X text 890 300 windowed mode;
 #X connect 0 0 3 0;
 #X connect 1 0 35 1;
 #X connect 2 0 35 2;
@@ -80,3 +87,6 @@ passthrough outlets -------------------------->;
 #X connect 36 0 4 0;
 #X connect 37 0 20 0;
 #X connect 38 0 20 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 41 0 20 0;
