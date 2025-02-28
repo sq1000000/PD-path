@@ -1,25 +1,25 @@
-#N canvas 0 25 1278 1305 10;
-#X obj 400 550 expr 10 * (pow(2000 \, $f1 / 127));
-#X obj 400 520 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 12700 1;
-#X obj 400 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 0 1;
-#X floatatom 400 340 5 0 0 0 - - -, f 5;
-#X obj 400 200 inlet;
-#X obj 500 200 loadbang;
-#X obj 1500 1080 f;
-#X obj 300 800 outlet~;
-#X obj 300 200 inlet~;
-#X obj 300 680 lop~;
-#X floatatom 350 640 5 0 0 0 - - -, f 5;
-#X floatatom 400 440 5 0 0 0 - - -, f 5;
-#X obj 400 400 sq/logic/map 127 0 0 127;
-#X obj 500 230 float 0;
-#X text 700 100 this is a fork of this ->;
-#X text 300 100 this abstraction is a low pass filter. Algorithm taken
+#N canvas 642 61 1278 1305 10;
+#X obj 300 550 expr 10 * (pow(2000 \, $f1 / 127));
+#X obj 300 520 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 3600 1;
+#X obj 300 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 9100 1;
+#X floatatom 300 340 5 0 0 0 - - -, f 5;
+#X obj 300 200 inlet;
+#X obj 400 200 loadbang;
+#X obj 1400 1080 f;
+#X obj 200 800 outlet~;
+#X obj 200 200 inlet~;
+#X obj 200 680 lop~;
+#X floatatom 250 640 5 0 0 0 - - -, f 5;
+#X floatatom 300 440 5 0 0 0 - - -, f 5;
+#X obj 300 400 sq/logic/map 127 0 0 127;
+#X obj 400 230 float 0;
+#X text 600 100 this is a fork of this ->;
+#X text 200 100 this abstraction is a low pass filter. Algorithm taken
 roughly from the TX-6 low/high pass filter \, except I only copied
 the low pass half.;
-#X obj 870 100 sq/fx/1_mid/low_n_high_pass~;
+#X obj 770 100 sq/fx/1_mid/low_n_high_pass~;
 #X connect 0 0 10 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;

@@ -1,69 +1,69 @@
-#N canvas 10 35 1265 1285 10;
-#X floatatom 700 600 7 0 0 0 - - -, f 7;
-#X obj 700 530 expr 10 * (pow(2000 \, $f1 / 127));
-#X obj 700 500 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#N canvas 11 35 1265 1285 10;
+#X floatatom 400 600 7 0 0 0 - - -, f 7;
+#X obj 400 530 expr 10 * (pow(2000 \, $f1 / 127));
+#X obj 400 500 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 12700 1;
-#X obj 4628 831 f;
-#X obj 800 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 12700 1;
-#X obj 900 500 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 12700 1;
-#X floatatom 900 600 7 0 0 0 - - -, f 7;
-#X obj 900 530 expr 10 * (pow(2000 \, $f1 / 127));
-#X floatatom 800 340 5 0 0 0 - - -, f 5;
-#X obj 800 200 inlet;
-#X obj 900 200 loadbang;
-#X obj 4129 1072 f;
-#X obj 500 1270 +~;
-#X obj 500 1400 outlet~;
-#X obj 500 200 inlet~;
-#X obj 500 880 *~;
-#X obj 500 800 lop~;
-#X floatatom 550 760 5 0 0 0 - - -, f 5;
-#X obj 1440 560 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0
+#X obj 4328 831 f;
+#X obj 500 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6400 1;
+#X obj 600 500 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 600 600 7 0 0 0 - - -, f 7;
+#X obj 600 530 expr 10 * (pow(2000 \, $f1 / 127));
+#X floatatom 500 340 5 0 0 0 - - -, f 5;
+#X obj 500 200 inlet;
+#X obj 600 200 loadbang;
+#X obj 3829 1072 f;
+#X obj 200 1270 +~;
+#X obj 200 1400 outlet~;
+#X obj 200 200 inlet~;
+#X obj 200 880 *~;
+#X obj 200 800 lop~;
+#X floatatom 250 760 5 0 0 0 - - -, f 5;
+#X obj 1140 560 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0
 10 #fcfcfc #000000 #000000 0 256 0;
-#X obj 1400 700 sel 1;
-#X floatatom 550 840 6 0 0 0 - - -, f 6;
-#X obj 1240 560 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0
-10 #fcfcfc #000000 #000000 0 256 0;
-#X obj 1200 690 sel 1;
-#X obj 1400 600 ==;
-#X obj 1200 750 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 1100 700 sel 1;
+#X floatatom 250 840 6 0 0 0 - - -, f 6;
+#X obj 940 560 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256 0;
+#X obj 900 690 sel 1;
+#X obj 1100 600 ==;
+#X obj 900 750 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1400 750 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 1100 750 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1200 600 !=;
-#X obj 1200 800 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
-10 #fcfcfc #000000 #000000 0 256 0;
-#X obj 1400 800 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+#X obj 900 600 !=;
+#X obj 900 800 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 0 256 0;
+#X obj 1100 800 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
 10 #fcfcfc #000000 #000000 1 256 0;
-#X floatatom 600 1060 5 0 0 0 - - -, f 5;
-#X obj 560 1100 hip~;
-#X obj 560 1180 *~;
-#X floatatom 600 1150 6 0 0 0 - - -, f 6;
-#X obj 1140 870 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0
-10 #fcfcfc #000000 #000000 10 256 0;
-#X obj 1100 1000 sel 1;
-#X obj 940 870 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0 10
+#X floatatom 300 1060 5 0 0 0 - - -, f 5;
+#X obj 260 1100 hip~;
+#X obj 260 1180 *~;
+#X floatatom 300 1150 6 0 0 0 - - -, f 6;
+#X obj 840 870 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0 10
 #fcfcfc #000000 #000000 10 256 0;
-#X obj 900 990 sel 1;
-#X obj 1100 900 ==;
-#X obj 900 1050 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 800 1000 sel 1;
+#X obj 640 870 nbx 5 14 -1e+09 1e+09 0 1 empty empty empty 0 -8 0 10
+#fcfcfc #000000 #000000 10 256 0;
+#X obj 600 990 sel 1;
+#X obj 800 900 ==;
+#X obj 600 1050 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 1100 1050 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 800 1050 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 900 900 !=;
-#X obj 1100 1100 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+#X obj 600 900 !=;
+#X obj 800 1100 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
 10 #fcfcfc #000000 #000000 0 256 0;
-#X obj 900 1100 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
+#X obj 600 1100 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0
 10 #fcfcfc #000000 #000000 1 256 0;
-#X obj 900 230 float 64;
-#X floatatom 900 420 5 0 0 0 - - -, f 5;
-#X floatatom 700 420 5 0 0 0 - - -, f 5;
-#X floatatom 1200 500 5 0 0 0 - - -, f 5;
-#X obj 700 380 sq/logic/map 0 60 0 127;
-#X obj 900 380 sq/logic/map 68 127 0 127;
-#X text 500 100 this abstraction is a low/high pass filter. Algorithm
+#X obj 600 230 float 64;
+#X floatatom 600 420 5 0 0 0 - - -, f 5;
+#X floatatom 400 420 5 0 0 0 - - -, f 5;
+#X floatatom 900 500 5 0 0 0 - - -, f 5;
+#X obj 400 380 sq/logic/map 0 60 0 127;
+#X obj 600 380 sq/logic/map 68 127 0 127;
+#X text 200 100 this abstraction is a low/high pass filter. Algorithm
 taken roughly from the TX-6 filter. Midi values 60-68 are in the dead
 zone;
 #X connect 0 0 17 0;

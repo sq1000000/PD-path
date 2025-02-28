@@ -1,6 +1,6 @@
-#N canvas 1444 593 989 614 12;
+#N canvas 874 484 989 614 12;
 #X obj 200 200 inlet~;
-#X obj 200 440 outlet~;
+#X obj 200 500 outlet~;
 #X obj 400 270 hsl 128 15 0 12700 0 0 empty empty empty -2 -8 0 10
 #fcfcfc #000000 #000000 0 1;
 #X floatatom 400 300 5 0 0 0 - - -, f 5;
