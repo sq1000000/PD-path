@@ -1,4 +1,4 @@
-#N canvas 1285 35 1265 1285 10;
+#N canvas 1285 93 1265 1285 10;
 #X obj 200 700 outlet;
 #X obj 200 200 inlet;
 #X obj 1750 700 f;
@@ -18,12 +18,14 @@
 #X obj 300 200 inlet;
 #X floatatom 300 260 5 0 0 0 - - -, f 5;
 #X floatatom 400 320 5 0 0 0 - - -, f 5;
-#X floatatom 200 380 5 0 0 0 - - -, f 5;
+#X floatatom 200 400 5 0 0 0 - - -, f 5;
 #X text 200 800 thank you to this guy: https://www.reddit.com/r/puredata/comments/4tj9bx/comment/d5hu9mi/
 ;
 #X text 200 100 sends a bang/input number if the second number is equal
 to the third number;
 #X obj 260 700 outlet;
+#X obj 500 230 float \$1;
+#X obj 500 200 loadbang;
 #X connect 1 0 18 0;
 #X connect 3 0 8 0;
 #X connect 4 0 13 0;
@@ -43,3 +45,5 @@ to the third number;
 #X connect 16 0 12 0;
 #X connect 17 0 8 1;
 #X connect 18 0 4 0;
+#X connect 22 0 11 0;
+#X connect 23 0 22 0;

@@ -1,4 +1,4 @@
-#N canvas 10 35 1265 1291 10;
+#N canvas 80 71 1265 1291 10;
 #X obj 1850 700 f;
 #X obj 200 200 inlet~;
 #X obj 300 400 outlet;
@@ -6,13 +6,13 @@
 #X text 350 400 <- this box toggles if the audio is 100% silent;
 #X text 200 140 this abstraction is the opposite of the sq/if/silent
 abstraction;
-#X obj 200 300 sq/if/silent;
 #X text 300 200 "sound" maybe wasn't the best word I could have chosen
 for this abstraction. there isn't really a word meaning "sound is present".
 "loud" suggests there's a lot of sound;
 #X text 200 100 this abstraction toggles on a box if the incoming audio
 has any sound;
 #X text 250 500 <- this box toggles if sound is found;
-#X connect 1 0 6 0;
-#X connect 6 0 2 0;
-#X connect 6 1 3 0;
+#X obj 200 300 sq/if/silent~;
+#X connect 1 0 9 0;
+#X connect 9 0 2 0;
+#X connect 9 1 3 0;

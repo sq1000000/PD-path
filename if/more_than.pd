@@ -1,4 +1,4 @@
-#N canvas 480 25 1278 1305 10;
+#N canvas 80 71 1240 1344 10;
 #X obj 200 700 outlet;
 #X obj 200 200 inlet;
 #X obj 1750 700 f;
@@ -16,7 +16,7 @@
 #X obj 300 200 inlet;
 #X floatatom 300 260 5 0 0 0 - - -, f 5;
 #X floatatom 400 350 5 0 0 0 - - -, f 5;
-#X floatatom 200 380 5 0 0 0 - - -, f 5;
+#X floatatom 200 400 5 0 0 0 - - -, f 5;
 #X obj 300 430 >, f 2;
 #X text 340 430 more than?;
 #X text 200 800 thank you to this guy: https://www.reddit.com/r/puredata/comments/4tj9bx/comment/d5hu9mi/
@@ -24,6 +24,8 @@
 #X text 200 100 sends a bang or the input number if the second number
 is more than the third number;
 #X obj 300 700 outlet;
+#X obj 500 230 float \$1;
+#X obj 500 200 loadbang;
 #X connect 1 0 16 0;
 #X connect 3 0 17 0;
 #X connect 4 0 11 0;
@@ -43,3 +45,5 @@ is more than the third number;
 #X connect 15 0 17 1;
 #X connect 16 0 4 0;
 #X connect 17 0 6 0;
+#X connect 22 0 9 0;
+#X connect 23 0 22 0;

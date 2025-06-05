@@ -1,0 +1,24 @@
+#N canvas 1588 377 775 642 12;
+#X msg 200 300 150 \, 50 70 0;
+#X obj 200 329 vline~;
+#X obj 200 358 osc~;
+#X obj 200 400 *~;
+#X msg 300 330 \$1 1 0 \, 0 100 1;
+#X obj 300 360 vline~;
+#X obj 200 200 inlet;
+#X obj 200 500 outlet~;
+#X obj 200 250 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 200 100 tutorial: https://www.youtube.com/watch?v=wYlOw8YXoBs
+;
+#X msg 300 300 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 1;
+#X connect 6 0 8 0;
+#X connect 8 0 0 0;
+#X connect 8 0 10 0;
+#X connect 10 0 4 0;

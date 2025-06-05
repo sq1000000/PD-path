@@ -1,0 +1,128 @@
+#N canvas 1220 414 1100 792 12;
+#N canvas 966 436 634 693 kick_synth 0;
+#X floatatom 400 330 5 0 0 0 - - -, f 5;
+#X floatatom 500 330 5 0 0 0 - - -, f 5;
+#X obj 300 600 *~ 1;
+#X obj 300 630 phasor~;
+#X obj 200 230 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 300 660 expr~ if ($v1 > 0.5 \, 0 \, 1);
+#X obj 340 700 noise~;
+#X floatatom 600 340 5 0 0 0 - - -, f 5;
+#X obj 400 600 *~ 1.5;
+#X obj 300 750 vcf~ 0.5;
+#X obj 200 850 *~;
+#X obj 500 700 osc~;
+#X floatatom 700 340 5 0 0 0 - - -, f 5;
+#X obj 500 660 *~ 1;
+#X obj 200 400 f 250;
+#X obj 200 200 inlet;
+#X obj 400 300 inlet;
+#X text 400 270 decay time;
+#X obj 500 300 inlet;
+#X text 500 270 pitchScale;
+#X text 600 270 filterScale;
+#X obj 600 300 inlet;
+#X text 700 270 sineVol;
+#X obj 200 900 outlet~;
+#X obj 700 300 inlet;
+#N canvas 1095 612 450 300 vol_env 0;
+#X obj 200 300 vline~;
+#X obj 200 350 *~;
+#X msg 200 250 0.5 \, 1 5 \, 0.5 60 5 \, 0 \$1 65;
+#X obj 200 200 inlet;
+#X obj 200 400 outlet~;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X restore 200 600 pd vol_env;
+#N canvas 1095 612 450 300 pitch_env 0;
+#X obj 200 200 inlet;
+#X obj 200 280 vline~;
+#X obj 200 440 mtof~;
+#X msg 200 240 1 \, 0.5 5 \, 0 \$1 5;
+#X obj 200 360 *~ 80;
+#X obj 200 400 +~ 29;
+#X obj 200 320 *~;
+#X obj 200 500 outlet~;
+#X connect 0 0 3 0;
+#X connect 1 0 6 0;
+#X connect 1 0 6 1;
+#X connect 2 0 7 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 2 0;
+#X connect 6 0 4 0;
+#X restore 300 500 pd pitch_env;
+#X connect 0 0 14 1;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 14 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 1;
+#X connect 8 0 9 1;
+#X connect 9 1 10 1;
+#X connect 10 0 23 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 1;
+#X connect 13 0 11 0;
+#X connect 14 0 25 0;
+#X connect 14 0 26 0;
+#X connect 15 0 4 0;
+#X connect 16 0 0 0;
+#X connect 18 0 1 0;
+#X connect 21 0 7 0;
+#X connect 24 0 12 0;
+#X connect 25 0 10 0;
+#X connect 26 0 2 0;
+#X connect 26 0 8 0;
+#X connect 26 0 13 0;
+#X restore 200 450 pd kick_synth;
+#X f 58;
+#X obj 200 260 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 300 400 5 0 0 1 decay - -, f 5;
+#X obj 300 260 vsl 15 128 50 2000 1 0 empty kick_decay empty 0 -9 0
+10 #fcfcfc #000000 #000000 5541 1;
+#X floatatom 400 400 5 0 0 1 pitch_scale - -, f 5;
+#X obj 400 260 vsl 15 128 0.1 3 0 0 empty kick_pitch empty 0 -9 0 10
+#fcfcfc #000000 #000000 3941 1;
+#X floatatom 600 400 5 0 0 1 sine_scale - -, f 5;
+#X obj 600 260 vsl 15 128 0 2 0 0 empty kick_sine empty 0 -9 0 10 #fcfcfc
+#000000 #000000 6350 1;
+#X floatatom 500 400 5 0 0 1 filter_scale - -, f 5;
+#X obj 500 260 vsl 15 128 0.1 3 0 0 empty kick_filter empty 0 -9 0
+10 #fcfcfc #000000 #000000 6131 1;
+#X msg 800 300 \; kick_decay 250 \; kick_pitch 1 \; kick_filter 1.5
+\; kick_sine 1 \;;
+#X msg 940 300 \; kick_decay 150 \; kick_pitch 0.5 \; kick_filter 1.5
+\; kick_sine 1 \;;
+#X msg 800 400 \; kick_decay 450 \; kick_pitch 0.25 \; kick_filter
+0.5 \; kick_sine 1 \;;
+#X msg 940 400 \; kick_decay 1500 \; kick_pitch 0.5 \; kick_filter
+0.5 \; kick_sine 0.5 \;;
+#X msg 800 500 \; kick_decay 50 \; kick_pitch 2.25 \; kick_filter 1.5
+\; kick_sine 0.8 \;;
+#X obj 200 600 outlet~;
+#X obj 200 500 *~ 0.5;
+#X text 200 100 tutorial: https://www.youtube.com/watch?v=Ksw3aCvI4Zc
+;
+#X obj 200 200 inlet;
+#X obj 800 240 loadbang;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 0 2;
+#X connect 5 0 4 0;
+#X connect 6 0 0 4;
+#X connect 7 0 6 0;
+#X connect 8 0 0 3;
+#X connect 9 0 8 0;
+#X connect 16 0 15 0;
+#X connect 18 0 1 0;
+#X connect 19 0 10 0;

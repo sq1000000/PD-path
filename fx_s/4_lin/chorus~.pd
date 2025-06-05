@@ -29,7 +29,7 @@
 #X floatatom 700 1000 5 0 0 0 - - -, f 5;
 #X obj 500 300 sq/rmp/map 0 127 0 0.9;
 #X obj 700 1040 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 102 102;
+#000000 127 127;
 #X obj 200 1300 outlet~;
 #X text 830 200 speed ->;
 #X obj 930 250 s \$0-speed;
