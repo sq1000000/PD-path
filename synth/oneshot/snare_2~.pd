@@ -1,0 +1,16 @@
+#N canvas 896 71 816 867 12;
+#X obj 200 200 inlet;
+#X obj 200 600 outlet~;
+#X obj 300 340 vline~;
+#X obj 200 300 noise~;
+#X obj 200 400 *~;
+#X obj 200 450 *~ 0.6;
+#X text 200 100 super simple snare using white noise and a basic envelope
+;
+#X msg 300 300 0.5 4 \, 0 200 4;
+#X connect 0 0 7 0;
+#X connect 2 0 4 1;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 7 0 2 0;
