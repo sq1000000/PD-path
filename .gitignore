@@ -3,3 +3,9 @@
 
 # Ignore all .wav files
 *.wav
+
+# Ignore all .mp3 files
+*.mp3
+
+# Ignore all .opus files
+*.opus
