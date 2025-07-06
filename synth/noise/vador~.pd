@@ -1,5 +1,5 @@
-#N canvas 546 398 935 818 12;
-#X obj 140 550 noise~;
+#N canvas 546 407 935 818 12;
+#X obj 100 500 noise~;
 #X obj 200 600 bp~ 300 4;
 #X obj 300 500 vline~;
 #X obj 200 650 *~;
@@ -16,18 +16,23 @@
 #X obj 200 260 metro 2500;
 #X msg 200 500 1500;
 #X msg 200 400 1 1000 \, 0 1000 1200;
-#X text 200 100 makes a "breathing" sound. often assosiated with a
-particular trademarked chartacter;
 #X obj 200 740 outlet~;
-#X text 500 200 algorithm is from here:https://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12e0efb3fa3b65afe33373848/android/assets/pd/pitchshift.pd
+#X text 500 500 algorithm is from here:https://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12e0efb3fa3b65afe33373848/android/assets/pd/pitchshift.pd
 ;
+#X text 200 100 makes a "breathing" sound. often associated with a
+particular trademarked chartacter;
+#X obj 500 200 inlet;
+#X obj 500 270 sq/rmp/map 0 127 2000 3000;
+#X floatatom 500 300 5 0 0 0 - - -, f 5;
+#X obj 500 240 hsl 128 15 0 127 0 0 empty empty Speed -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;
 #X connect 2 0 6 1;
 #X connect 3 0 5 0;
 #X connect 4 0 1 1;
-#X connect 5 0 18 0;
+#X connect 5 0 17 0;
 #X connect 6 0 3 1;
 #X connect 7 0 10 1;
 #X connect 8 0 9 0;
@@ -43,3 +48,7 @@ particular trademarked chartacter;
 #X connect 15 0 1 1;
 #X connect 16 0 2 0;
 #X connect 16 0 15 0;
+#X connect 20 0 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 14 1;
+#X connect 23 0 21 0;

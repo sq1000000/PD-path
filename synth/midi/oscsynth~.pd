@@ -1,7 +1,5 @@
-#N canvas 0 25 928 851 12;
-#X obj 200 199 notein;
+#N canvas 856 335 928 851 12;
 #X floatatom 200 280 5 0 0 0 - - -, f 5;
-#X floatatom 250 280 5 0 0 0 - - -, f 5;
 #X floatatom 300 280 5 0 0 0 - - -, f 5;
 #X obj 200 340 mtof;
 #X floatatom 200 400 5 0 0 0 - - -, f 5;
@@ -11,14 +9,15 @@
 #X obj 200 550 *~;
 #X text 200 100 this is a super simple monophonic synthesizer that
 uses the midi note input to play a sound through osc~;
-#X connect 0 0 1 0;
-#X connect 0 1 2 0;
-#X connect 0 2 3 0;
-#X connect 1 0 4 0;
-#X connect 2 0 8 0;
-#X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 5 0 6 1;
-#X connect 6 0 9 0;
-#X connect 8 0 9 1;
-#X connect 9 0 7 0;
+#X obj 200 200 inlet;
+#X obj 300 200 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 7 0;
+#X connect 6 0 7 1;
+#X connect 7 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 1 0;

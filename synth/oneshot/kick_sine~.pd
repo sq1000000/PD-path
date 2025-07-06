@@ -1,0 +1,28 @@
+#N canvas 852 220 1207 934 12;
+#X obj 200 200 inlet;
+#X obj 200 700 outlet~;
+#X obj 400 440 vline~;
+#X obj 200 500 *~;
+#X msg 400 400 0.5 4 \, 0 400 4;
+#X obj 400 240 hsl 128 15 0 127 0 0 empty empty pitch\\\ bend -2 -8
+0 10 #fcfcfc #000000 #000000 4350 1;
+#X obj 200 400 osc~ 60;
+#X floatatom 400 310 5 0 0 0 - - -, f 5;
+#X obj 400 270 sq/rmp/map 0 127 40 80;
+#X obj 200 550 *~ 0.9;
+#X obj 400 200 inlet;
+#X text 200 130 It doesn't sound great. It's more of a proof of concept
+than something useable. If you want \, consider adding some distortion
+to get it to sound better;
+#X text 200 100 Super simple kick using a sine wave and a basic envelope
+;
+#X connect 0 0 4 0;
+#X connect 2 0 3 1;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 1 0;
+#X connect 10 0 5 0;

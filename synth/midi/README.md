@@ -1,1 +1,1 @@
-This folder contains a bunch of basic synthesizer abstractions used to be played with a midi input.
+This folder contains a bunch of basic synthesizer abstractions. Each abstraction expects a note number as the first input, and a note velocity as the second input. These can be received from a midi signal with the notein object.

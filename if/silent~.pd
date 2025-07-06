@@ -1,18 +1,18 @@
-#N canvas 10 35 1265 1285 10;
+#N canvas 80 69 1265 1285 10;
 #X obj 1850 700 f;
 #X obj 200 200 inlet~;
-#X obj 200 700 outlet;
+#X obj 200 600 outlet;
 #X text 200 100 this abstraction toggles on a box if the incoming audio
 has no sound;
-#X obj 200 400 change;
-#X obj 200 240 env~;
-#X obj 200 440 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X obj 200 300 == 0;
-#X obj 300 500 sq/rmp/bitflip;
-#X obj 300 600 outlet;
-#X text 350 600 <- this box toggles if sound is found;
-#X text 250 700 <- this box toggles if the audio is 100% silent;
+#X obj 200 300 change;
+#X obj 200 230 env~;
+#X obj 200 340 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 200 260 == 0;
+#X obj 300 400 sq/rmp/bitflip;
+#X obj 300 500 outlet;
+#X text 350 500 <- this box toggles if sound is found;
+#X text 250 600 <- this box toggles if the audio is 100% silent;
 #X connect 1 0 5 0;
 #X connect 4 0 6 0;
 #X connect 5 0 7 0;

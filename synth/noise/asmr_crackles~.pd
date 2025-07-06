@@ -1,0 +1,75 @@
+#N canvas 1256 325 955 818 12;
+#X floatatom 200 530 5 0 0 0 - - -, f 5;
+#X obj 200 560 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 200 590 1 \, 0 2;
+#X obj 200 620 vline~;
+#X obj 300 600 noise~;
+#X obj 300 630 lop~;
+#X obj 300 660 hip~;
+#X obj 300 690 *~;
+#X obj 700 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 5150 1;
+#X obj 700 254 / 127;
+#X obj 700 283 * 1000;
+#X obj 700 312 + 20;
+#X obj 200 800 outlet~;
+#X obj 200 500 metro;
+#X obj 200 400 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 300 290 random 8;
+#X obj 300 320 select 1 2 3 4 5 6 7 8;
+#X floatatom 300 420 5 0 0 0 - - -, f 5;
+#X obj 300 230 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X msg 300 370 100;
+#X msg 340 370 200;
+#X msg 380 370 300;
+#X msg 420 370 150;
+#X msg 460 370 250;
+#X msg 500 370 350;
+#X obj 200 200 loadbang;
+#X obj 300 260 metro 1000;
+#X msg 540 370 80;
+#X msg 580 370 125;
+#X text 200 100 tutorial:https://www.youtube.com/shorts/6J_0NseXSVc
+;
+#X obj 700 200 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 1;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 12 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 5 1;
+#X connect 11 0 6 1;
+#X connect 13 0 0 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 16 1 20 0;
+#X connect 16 2 21 0;
+#X connect 16 3 22 0;
+#X connect 16 4 23 0;
+#X connect 16 5 24 0;
+#X connect 16 6 27 0;
+#X connect 16 7 28 0;
+#X connect 17 0 13 1;
+#X connect 18 0 26 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 23 0 17 0;
+#X connect 24 0 17 0;
+#X connect 25 0 14 0;
+#X connect 25 0 18 0;
+#X connect 26 0 15 0;
+#X connect 27 0 17 0;
+#X connect 28 0 17 0;
+#X connect 30 0 8 0;
