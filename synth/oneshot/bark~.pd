@@ -224,8 +224,6 @@
 ;
 #X obj 600 200 loadbang;
 #X msg 600 225 63.5;
-#X text 710 110 original patch from here:https://github.com/atosystem/sensor_your_music_test/blob/895cb37d083a55781f16aa6119da4af102ca1dde/sym_pd/externals/pd-mkmr-master/sound%20effects/bark~.pd
-;
 #X connect 0 0 1 0;
 #X connect 2 0 80 0;
 #X connect 3 0 126 0;

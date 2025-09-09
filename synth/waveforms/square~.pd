@@ -1,6 +1,5 @@
-#N canvas 1285 35 1265 1291 10;
+#N canvas 80 69 1240 1346 10;
 #X obj 200 200 inlet~;
-#X obj 200 330 expr~ abs($v1*2-1)*2-1;
 #X obj 300 200 inlet;
 #X obj 200 300 phasor~;
 #X obj 200 400 outlet~;
@@ -10,10 +9,13 @@
 #X text 500 100 learned from here: https://www.youtube.com/watch?v=ZTzAPR-9ovM
 ;
 #X text 200 100 this makes a square waveform;
-#X connect 0 0 3 0;
-#X connect 1 0 4 0;
-#X connect 2 0 3 1;
-#X connect 3 0 1 0;
-#X connect 5 0 3 0;
+#X obj 200 330 *~ 6.28319;
+#X obj 200 360 expr~ if(sin($v1) >= 0 \, 1 \, -1);
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
 #X connect 6 0 5 0;
-#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 3 0;

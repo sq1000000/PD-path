@@ -1,0 +1,35 @@
+#N canvas 1280 474 1045 866 12;
+#X obj 200 700 outlet~;
+#X floatatom 400 300 5 0 0 0 - - -, f 5;
+#X obj 200 500 *~ 1;
+#X floatatom 200 300 8 0 0 0 - - -, f 8;
+#X obj 200 400 sq/synth/waveforms/random~ 1;
+#X obj 200 600 sq/synth/waveforms/square~;
+#X obj 400 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6000 1;
+#X obj 200 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 500 1;
+#X text 400 600 <- sound being made;
+#X text 410 400 <- LFO (modulating the sound);
+#X obj 400 260 sq/rmp/map 0 127 0 20;
+#X obj 400 200 inlet;
+#X obj 200 200 inlet;
+#X obj 100 200 loadbang;
+#X msg 100 240 100;
+#X text 200 100 i was trying to make a dub siren \, but while I was
+playing around with frequencies \, I discovered this. Thought it sounded
+pretty neat;
+#X obj 200 260 sq/rmp/map 0 127 0 1000;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 0 0;
+#X connect 6 0 10 0;
+#X connect 7 0 16 0;
+#X connect 10 0 1 0;
+#X connect 11 0 6 0;
+#X connect 12 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 3 0;
+#X connect 16 0 3 0;

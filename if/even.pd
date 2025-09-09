@@ -1,4 +1,4 @@
-#N canvas 1285 35 1265 1285 12;
+#N canvas 1285 78 1265 1285 12;
 #X obj 200 200 inlet;
 #X obj 200 600 outlet;
 #X obj 300 570 outlet;
@@ -11,8 +11,14 @@ is input that isn't an integer \, it'll treat it as if the 'int' block
 was applied;
 #X text 260 600 <- toggles if even;
 #X text 360 570 <- toggles if odd;
+#X obj 360 440 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 210 720 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X connect 0 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 4 0 2 0;
+#X connect 4 0 9 0;
 #X connect 5 0 1 0;
+#X connect 5 0 10 0;

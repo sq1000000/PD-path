@@ -1,0 +1,37 @@
+#N canvas 1320 69 1240 1346 10;
+#X obj 200 200 inlet~;
+#X obj 300 200 inlet;
+#X obj 200 300 phasor~;
+#X obj 200 400 outlet~;
+#X floatatom 400 260 5 0 0 0 - - -, f 5;
+#X obj 400 230 float \$1;
+#X obj 400 200 loadbang;
+#X obj 600 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 6350 1;
+#X floatatom 600 260 5 0 0 0 - - -, f 5;
+#X text 200 100 this makes a pulse waveform;
+#X obj 500 200 loadbang;
+#X msg 500 225 63.5;
+#X obj 600 200 inlet;
+#X text 400 400 theres this "clicking" artifact when the wave closes
+that I can't figure out how to get rid of. As far as I can tell \,
+this is a DSP limitation that is unfixable;
+#X text 200 130 the third inlet expects an hslider input. The slider
+adjusts the size of the pulse wave. Without anything input \, a basic
+square wave is sent out;
+#X obj 200 350 expr~ 2*($v1<$v2)-1;
+#X obj 600 290 / 127;
+#X text 330 350 <- who even knows how this works;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 15 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 8 0 16 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 15 0 3 0;
+#X connect 16 0 15 1;

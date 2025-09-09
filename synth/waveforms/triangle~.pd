@@ -1,6 +1,6 @@
-#N canvas 1285 35 1265 1294 10;
+#N canvas 1285 69 1265 1294 10;
 #X obj 200 200 inlet~;
-#X obj 200 330 expr~ abs($v1*2-1)*2-1;
+#X obj 200 350 expr~ abs($v1*2-1)*2-1;
 #X obj 300 200 inlet;
 #X obj 200 300 phasor~;
 #X obj 200 400 outlet~;

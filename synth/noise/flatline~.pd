@@ -1,0 +1,10 @@
+#N canvas 80 69 1240 1346 12;
+#X obj 200 400 outlet~;
+#X obj 200 300 sig~;
+#X msg 200 250 1;
+#X obj 200 200 loadbang;
+#X text 200 100 this is simply a flat line of audio. Audio is technically
+present \, but you can't hear it!, f 81;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

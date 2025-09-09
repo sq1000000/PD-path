@@ -1,0 +1,26 @@
+#N canvas 80 69 1240 1346 10;
+#X obj 200 200 inlet~;
+#X obj 300 200 inlet;
+#X obj 200 300 phasor~;
+#X obj 200 600 outlet~;
+#X floatatom 400 260 5 0 0 0 - - -, f 5;
+#X obj 400 230 float \$1;
+#X obj 400 200 loadbang;
+#X obj 240 350 z~ 1;
+#X obj 200 400 expr~ ($v1) < ($v2);
+#X obj 200 500 samphold~;
+#X obj 200 460 noise~;
+#X text 200 100 this makes a random waveform;
+#X text 500 100 Inspired by the "RND" Dpro waveform on the monomachine
+;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 8 0;
+#X connect 2 0 7 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 1;
+#X connect 8 0 9 1;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;

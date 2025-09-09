@@ -1,20 +1,19 @@
-#N canvas 10 35 1265 1288 12;
+#N canvas 80 87 1265 1288 12;
 #X obj 600 370 bng 30 250 50 0 empty empty Start_Recording 0 -6 0 10
 #00cc04 #f8fc00 #00cc04;
 #X obj 500 370 bng 30 250 50 0 empty empty Stop_Recording 0 -6 0 10
 #e87400 #00fc04 #e87400;
 #X msg 460 600 start;
 #X msg 400 600 stop;
-#X msg 600 700 open \$1;
 #X obj 200 200 inlet~;
 #X obj 280 200 inlet~;
 #X obj 200 1100 writesf~ 2;
-#N canvas 961 342 704 685 date/time 0;
+#N canvas 273 344 942 849 date/time 0;
 #X obj 200 200 inlet;
-#X obj 200 800 outlet;
+#X obj 200 900 outlet;
 #X obj 330 300 time;
 #X obj 240 300 date;
-#X obj 200 720 symbol;
+#X obj 200 800 symbol;
 #X obj 200 520 f;
 #X obj 530 370 symbol _;
 #X obj 450 370 symbol -;
@@ -25,10 +24,12 @@
 #X floatatom 360 370 4 0 0 0 - - -, f 4;
 #X floatatom 400 370 4 0 0 0 - - -, f 4;
 #X obj 200 600 pack f s f s f s f s f s f;
-#X msg 200 680 recordings/\$1\$2\$3\$4\$5\$6\$7\$8\$9\$10\$11;
+#X msg 200 700 recordings/\$1\$2\$3\$4\$5\$6\$7\$8\$9\$10\$11;
 #X obj 200 240 trigger bang bang bang bang bang;
 #X text 200 100 this subpatch outputs the date & time in a unix-like
 manner;
+#X text 300 800 the output should look something like this:Year-Month-Day_Hour-Second-Microsecond
+;
 #X connect 0 0 16 0;
 #X connect 2 0 11 0;
 #X connect 2 1 12 0;
@@ -57,21 +58,21 @@ manner;
 #X connect 16 3 7 0;
 #X connect 16 4 6 0;
 #X restore 600 600 pd date/time;
-#X obj 500 250 tgl 21 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 500 250 tgl 19 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 127;
 #X obj 500 300 sel 0;
 #X obj 500 200 inlet;
-#X obj 800 600 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 900 600 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 880 660 metro 100;
-#X obj 800 700 realtime;
-#X obj 800 1100 outlet;
+#X obj 980 660 metro 100;
+#X obj 900 700 realtime;
+#X obj 900 1100 outlet;
 #X obj 1960 2310 f;
-#X floatatom 800 780 5 0 0 0 - - -, f 5;
-#X obj 800 740 / 1000;
+#X floatatom 900 780 5 0 0 0 - - -, f 5;
+#X obj 900 740 / 1000;
 #X obj 210 470 outlet~;
 #X obj 310 470 outlet~;
-#X msg 880 600 stop;
+#X msg 980 600 stop;
 #X text 700 100 tutorial: https://www.youtube.com/watch?v=YFAPwHndK8I
 ;
 #X text 200 100 this abstraction records incoming audio to a wav file
@@ -81,28 +82,31 @@ named with the current time. The audio outlets are only there as passthroughs
 #X text 700 200 based off of this patch: https://github.com/hellocatfood/neonplastic/blob/7bbde7830f744e6fe2f98a0cc5c1543712c4dec8/nplib/abs.record.ssimple.pd#L14
 , f 61;
 #X obj 600 410 t b b b;
-#X connect 0 0 26 0;
+#X msg 600 700 open -bytes 4 \$1;
+#X text 610 670 create 32-bit floating-point soundfile:;
+#X text 530 250 <- toggle recording;
+#X connect 0 0 25 0;
 #X connect 1 0 3 0;
-#X connect 1 0 21 0;
-#X connect 2 0 7 0;
-#X connect 3 0 7 0;
-#X connect 4 0 7 0;
-#X connect 5 0 7 0;
+#X connect 1 0 20 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 4 0 18 0;
+#X connect 5 0 6 1;
 #X connect 5 0 19 0;
-#X connect 6 0 7 1;
-#X connect 6 0 20 0;
-#X connect 8 0 4 0;
-#X connect 9 0 10 0;
-#X connect 10 0 1 0;
-#X connect 10 1 0 0;
-#X connect 11 0 9 0;
-#X connect 12 0 14 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 1;
-#X connect 14 0 18 0;
-#X connect 17 0 15 0;
-#X connect 18 0 17 0;
-#X connect 21 0 13 0;
-#X connect 26 0 2 0;
-#X connect 26 1 12 0;
-#X connect 26 2 8 0;
+#X connect 7 0 26 0;
+#X connect 8 0 9 0;
+#X connect 9 0 1 0;
+#X connect 9 1 0 0;
+#X connect 10 0 8 0;
+#X connect 11 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 1;
+#X connect 13 0 17 0;
+#X connect 16 0 14 0;
+#X connect 17 0 16 0;
+#X connect 20 0 12 0;
+#X connect 25 0 2 0;
+#X connect 25 1 11 0;
+#X connect 25 2 7 0;
+#X connect 26 0 6 0;

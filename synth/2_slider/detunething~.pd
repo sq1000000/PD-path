@@ -1,4 +1,4 @@
-#N canvas 732 28 730 729 12;
+#N canvas 1395 276 730 729 12;
 #X obj 200 200 inlet;
 #X obj 200 700 outlet~;
 #X obj 400 200 inlet;

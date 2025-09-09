@@ -1,5 +1,4 @@
-#N canvas 10 35 1265 1285 12;
-#X obj 200 600 +~;
+#N canvas 1320 69 1240 1346 12;
 #X floatatom 200 300 5 0 0 0 - - -, f 5;
 #X floatatom 400 450 5 0 0 0 - - -, f 5;
 #X msg 600 300 0.893;
@@ -11,8 +10,8 @@
 #X msg 920 300 1.11;
 #X obj 200 200 inlet;
 #X obj 200 700 outlet~;
-#X floatatom 550 360 5 0 0 0 - - -, f 5;
-#X obj 400 350 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X floatatom 600 350 5 0 0 0 - - -, f 5;
+#X obj 400 300 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 400 400 *;
 #X obj 810 200 loadbang;
@@ -21,7 +20,7 @@
 #X text 700 100 a "proper" supersaw abstraction would probably let
 you detune it with an inlet \, but for consistency \, I'm keeping the
 detune at 1.02;
-#X obj 200 640 *~ 0.5;
+#X obj 200 600 *~ 0.5;
 #X text 200 100 a supersaw waveform is created by stacking and slightly
 detuning multiple sawtooth waves to produce a thick \, harmonically
 rich sound. Popularized by the Roland JP-8000 synthesizer;
@@ -33,28 +32,27 @@ use that some other time;
 #X floatatom 300 260 5 0 0 0 - - -, f 5;
 #X obj 300 230 float \$1;
 #X obj 300 200 loadbang;
-#X connect 0 0 18 0;
-#X connect 1 0 14 0;
+#X connect 0 0 13 0;
+#X connect 0 0 19 0;
 #X connect 1 0 20 0;
-#X connect 2 0 21 0;
-#X connect 3 0 12 0;
-#X connect 4 0 12 0;
-#X connect 5 0 12 0;
-#X connect 6 0 12 0;
-#X connect 7 0 12 0;
-#X connect 8 0 12 0;
-#X connect 9 0 12 0;
-#X connect 10 0 1 0;
-#X connect 12 0 13 0;
-#X connect 12 0 14 1;
+#X connect 2 0 11 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 11 0;
+#X connect 8 0 11 0;
+#X connect 9 0 0 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 1;
+#X connect 12 0 0 0;
 #X connect 13 0 1 0;
-#X connect 14 0 2 0;
-#X connect 15 0 7 0;
-#X connect 15 0 22 0;
-#X connect 18 0 11 0;
-#X connect 20 0 0 0;
-#X connect 21 0 0 1;
-#X connect 22 0 7 0;
-#X connect 24 0 1 0;
+#X connect 14 0 6 0;
+#X connect 14 0 21 0;
+#X connect 17 0 10 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 21 0 6 0;
+#X connect 23 0 0 0;
+#X connect 24 0 23 0;
 #X connect 25 0 24 0;
-#X connect 26 0 25 0;

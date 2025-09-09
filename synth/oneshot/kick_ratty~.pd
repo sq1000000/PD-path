@@ -1,0 +1,101 @@
+#N canvas 375 356 1196 840 12;
+#X obj 300 800 *~;
+#X obj 600 550 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4
+#4d4d4d #373737;
+#X obj 700 550 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4
+#4d4d4d #373737;
+#X obj 500 430 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4
+#4d4d4d #373737;
+#X msg 500 500 1 5;
+#X obj 600 500 delay 5;
+#X msg 600 600 0.25 50;
+#X obj 300 510 *~ 1;
+#X obj 300 700 clip~ -0.9 0.9;
+#X obj 300 550 bp~ 150 4;
+#X obj 200 440 * 8000;
+#X obj 500 700 line~;
+#X obj 300 600 *~ 20;
+#X obj 700 500 delay 50;
+#X obj 300 900 outlet~;
+#X obj 500 240 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 900 1;
+#X obj 300 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 12700 1;
+#X obj 260 440 noise~;
+#X msg 700 600 0 120;
+#X floatatom 900 460 5 0 0 0 - - -, f 5;
+#X msg 900 500 set 0 \$1;
+#X obj 700 230 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 700 200 inlet;
+#X obj 700 260 sq/rmp/map 0 127 120 1500;
+#X floatatom 200 480 10 0 0 0 - - -, f 10;
+#X obj 200 600 *~ 0.1;
+#X obj 200 550 hip~ 0;
+#X obj 300 260 sq/rmp/map 0 127 10 30;
+#X obj 300 200 inlet;
+#X obj 500 200 inlet;
+#X text 700 170 decay;
+#X text 500 170 light noise amount;
+#X text 300 170 heavy noise amount;
+#X obj 200 200 inlet;
+#X obj 700 300 s \$0-decay;
+#X obj 900 400 r \$0-decay;
+#X obj 500 300 s \$0-lightnoise;
+#X obj 500 270 / 127;
+#X obj 200 400 r \$0-lightnoise;
+#X obj 380 520 r \$0-heavynoise;
+#X obj 200 300 s \$0-trigger;
+#X obj 500 380 r \$0-trigger;
+#X obj 200 250 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 300 300 s \$0-heavynoise;
+#X floatatom 380 550 5 0 0 0 - - -, f 5;
+#X obj 1000 400 loadbang;
+#X msg 1000 429 120;
+#X text 700 100 original patch from here:https://github.com/Ragnarok540/pd-theory/blob/b520f224962da1b61f53cc7c86dadb3061c85dda/src/0506_adsr_kick.pd#L4
+;
+#X text 200 100 this abstraction makes a ratty kick. Not a lot of good
+use cases for this;
+#X connect 0 0 14 0;
+#X connect 1 0 13 0;
+#X connect 1 0 6 0;
+#X connect 2 0 18 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 6 0 11 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 12 0;
+#X connect 10 0 24 0;
+#X connect 11 0 0 1;
+#X connect 12 0 8 0;
+#X connect 13 0 2 0;
+#X connect 15 0 37 0;
+#X connect 16 0 27 0;
+#X connect 17 0 7 0;
+#X connect 17 0 26 0;
+#X connect 18 0 11 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X connect 23 0 34 0;
+#X connect 24 0 26 1;
+#X connect 25 0 8 0;
+#X connect 26 0 25 0;
+#X connect 27 0 43 0;
+#X connect 28 0 16 0;
+#X connect 29 0 15 0;
+#X connect 33 0 42 0;
+#X connect 35 0 19 0;
+#X connect 37 0 36 0;
+#X connect 38 0 10 0;
+#X connect 39 0 44 0;
+#X connect 41 0 3 0;
+#X connect 42 0 40 0;
+#X connect 44 0 12 1;
+#X connect 45 0 46 0;
+#X connect 46 0 19 0;
