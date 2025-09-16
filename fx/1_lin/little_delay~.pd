@@ -1,22 +1,26 @@
-#N canvas 874 484 989 614 12;
+#N canvas 1320 69 1240 1346 12;
 #X obj 200 200 inlet~;
-#X obj 200 500 outlet~;
+#X obj 200 700 outlet~;
 #X obj 400 270 hsl 128 15 0 12700 0 0 empty empty empty -2 -8 0 10
 #fcfcfc #000000 #000000 0 1;
 #X floatatom 400 300 5 0 0 0 - - -, f 5;
 #X obj 300 340 zexy/z~;
 #X obj 400 200 inlet;
-#X obj 400 230 sq/logic/map 0 127 0 5000;
-#X obj 200 400 *~ 0.5;
+#X obj 300 400 *~ 0.5;
 #X text 200 100 I found this effect sort of neat. It kind of sounds
 like a chorus thing by adding a slight delay to the signal;
 #X text 360 340 <- I don't like the zexy/z thing. It doesn't fade input
 values very well. Maybe I'll find another backend sometime;
+#X obj 200 600 sq/logic/bypass~;
+#X obj 400 230 sq/rmp/map 0 127 0 5000;
 #X connect 0 0 4 0;
-#X connect 0 0 7 0;
+#X connect 0 0 6 0;
+#X connect 0 0 9 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 1;
-#X connect 4 0 7 0;
-#X connect 5 0 6 0;
-#X connect 6 0 2 0;
-#X connect 7 0 1 0;
+#X connect 3 0 9 2;
+#X connect 4 0 6 0;
+#X connect 5 0 10 0;
+#X connect 6 0 9 1;
+#X connect 9 0 1 0;
+#X connect 10 0 2 0;

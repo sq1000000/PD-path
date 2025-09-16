@@ -1,4 +1,4 @@
-#N canvas 136 255 1279 875 10;
+#N canvas 136 264 1279 875 10;
 #X obj 4428 631 f;
 #X obj 1698 2021 f;
 #X obj 200 200 inlet~;
@@ -9,13 +9,13 @@
 #X msg 800 1100 freeze \$1;
 #X msg 800 1000 bypass \$1;
 #X obj 800 1070 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 53 53;
+#000000 0 53;
 #X obj 800 970 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 400 450 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #00fc04
-#000000 #000000 2310 1;
+#000000 #000000 0 1;
 #X obj 600 450 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #fc8000
-#000000 #000000 3300 1;
+#000000 #000000 0 1;
 #X floatatom 600 480 5 0 0 0 - - -, f 5;
 #X floatatom 400 480 5 0 0 0 - - -, f 5;
 #X text 900 1080 Freeze the reverb;
@@ -23,15 +23,14 @@
 #X text 650 480 Damping level;
 #X text 450 480 Roomize;
 #X obj 800 200 inlet;
-#X obj 600 400 sq/logic/map 0 127 0 1;
 #X text 900 980 run the reverb off and let;
 #X obj 800 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
-#000000 #000000 3300 1;
+#000000 #000000 0 1;
 #X text 800 900 extra stuff:;
 #X msg 800 600 wet \$1;
 #X msg 850 600 dry \$1;
 #X obj 800 450 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #00ccff
-#000000 #000000 3300 1;
+#000000 #000000 0 1;
 #N canvas 2 80 450 300 inv 0;
 #X obj 154 69 inlet;
 #X obj 154 179 outlet;
@@ -50,20 +49,21 @@
 #X floatatom 800 480 5 0 0 0 - - -, f 5;
 #X text 870 480 Wet signal to dry signal ratio;
 #X text 870 500 (0 : all dry \, 1 : all wet);
-#X obj 400 400 sq/logic/map 0 127 0 0.7;
 #X text 200 100 reverb is generally one of those things you should
 have more than one parameter controlling. But if you want it all done
 in one knob \, here's an alright way to to it;
 #X obj 900 200 loadbang;
 #X obj 900 225 float 0;
 #X msg 100 780 print;
-#X obj 800 400 sq/logic/map 0 127 0 1;
 #X obj 1000 825 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#000000 1 1;
 #X obj 1000 800 == 1;
 #X text 1040 800 <- freeverb sucks and even at 100% dry \, it still
 modifies the signal. So I made this extra thing to bypass the audio
 when the signal should be 100% dry;
+#X obj 400 400 sq/rmp/map 0 127 0 0.7;
+#X obj 600 400 sq/rmp/map 0 127 0 1;
+#X obj 800 400 sq/rmp/map 0 127 0 1;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
@@ -76,23 +76,23 @@ when the signal should be 100% dry;
 #X connect 12 0 13 0;
 #X connect 13 0 6 0;
 #X connect 14 0 5 0;
-#X connect 19 0 22 0;
-#X connect 20 0 12 0;
-#X connect 22 0 20 0;
-#X connect 22 0 34 0;
-#X connect 22 0 39 0;
+#X connect 19 0 21 0;
+#X connect 21 0 40 0;
+#X connect 21 0 41 0;
+#X connect 21 0 42 0;
+#X connect 23 0 4 0;
 #X connect 24 0 4 0;
-#X connect 25 0 4 0;
-#X connect 26 0 31 0;
-#X connect 27 0 25 0;
-#X connect 27 0 28 0;
-#X connect 28 0 41 0;
-#X connect 31 0 24 0;
-#X connect 31 0 27 0;
-#X connect 34 0 11 0;
-#X connect 36 0 37 0;
-#X connect 37 0 22 0;
-#X connect 38 0 4 0;
-#X connect 39 0 26 0;
-#X connect 40 0 10 0;
-#X connect 41 0 40 0;
+#X connect 25 0 30 0;
+#X connect 26 0 24 0;
+#X connect 26 0 27 0;
+#X connect 27 0 38 0;
+#X connect 30 0 23 0;
+#X connect 30 0 26 0;
+#X connect 34 0 35 0;
+#X connect 35 0 21 0;
+#X connect 36 0 4 0;
+#X connect 37 0 10 0;
+#X connect 38 0 37 0;
+#X connect 40 0 11 0;
+#X connect 41 0 12 0;
+#X connect 42 0 25 0;

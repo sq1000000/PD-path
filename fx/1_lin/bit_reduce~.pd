@@ -1,4 +1,4 @@
-#N canvas 1285 35 1265 1288 10;
+#N canvas 1285 78 1265 1288 10;
 #X obj 200 200 inlet~;
 #X obj 200 1100 outlet~;
 #X obj 250 710 expr~ round($v1 / $f2);
@@ -11,7 +11,7 @@
 #X text 450 582 <- bit depth;
 #X floatatom 400 330 5 0 0 0 - - -, f 5;
 #X obj 400 360 hradio 15 0 0 31 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 0;
+#000000 #000000 30;
 #X msg 400 460 2;
 #X obj 2200 710 f;
 #X msg 430 460 2.1;
@@ -53,21 +53,21 @@
 #X text 200 100 this abstraction is a bitcruncher;
 #X text 700 100 tutorial here: https://www.youtube.com/watch?v=YmSQ-AMS860
 ;
-#X obj 400 270 sq/logic/map 0 127 31 0;
 #X obj 600 200 loadbang;
-#X obj 600 300 float 31;
 #X obj 200 900 sq/logic/bypass~;
 #X obj 300 800 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 127 127;
+#000000 0 127;
 #X text 200 130 I tried to copy the knob progression from the terminal/BITS
 effect on the OP-1 Field \, but it's not algorithmically linear \,
 so I had to make all the boxes you see. Oh \, also \, I made 16 bit
 a passthrough because at that point \, you might as well be using 32
 bit or whatever puredata uses these days, f 78;
+#X obj 400 270 sq/rmp/map 0 127 31 0;
+#X msg 600 300 31;
 #X connect 0 0 2 0;
-#X connect 0 0 54 0;
+#X connect 0 0 52 0;
 #X connect 2 0 3 0;
-#X connect 3 0 54 1;
+#X connect 3 0 52 1;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
@@ -139,12 +139,12 @@ bit or whatever puredata uses these days, f 78;
 #X connect 45 28 42 0;
 #X connect 45 29 43 0;
 #X connect 45 30 44 0;
-#X connect 46 0 51 0;
+#X connect 46 0 53 0;
 #X connect 46 0 55 0;
 #X connect 47 0 10 0;
 #X connect 48 0 4 0;
-#X connect 51 0 47 0;
-#X connect 52 0 53 0;
-#X connect 53 0 10 0;
-#X connect 54 0 1 0;
-#X connect 55 0 54 2;
+#X connect 51 0 56 0;
+#X connect 52 0 1 0;
+#X connect 53 0 52 2;
+#X connect 55 0 47 0;
+#X connect 56 0 10 0;

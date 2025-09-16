@@ -1,4 +1,4 @@
-#N canvas 964 25 1277 1305 12;
+#N canvas 964 69 1277 1305 12;
 #X obj 200 680 moog~;
 #X floatatom 652 362 5 0 0 0 - - -, f 5;
 #X floatatom 480 490 5 0 0 0 - - -, f 5;
@@ -19,31 +19,31 @@
 #X obj 200 940 outlet~;
 #X obj 400 400 * 1;
 #X floatatom 400 360 5 0 0 0 - - -, f 5;
-#X obj 652 302 sq/logic/map 0 127 1 4;
 #X obj 200 200 inlet~;
-#X obj 400 300 sq/logic/map 0 127 0 50;
 #X obj 400 570 +~ 100;
 #X text 200 100 I tried to make a nice implentation of the moog~ object
 as a filter \, but idk \, I don't really like this;
 #X text 200 160 I suppose I'll keep around if I want to fix it later
 ;
+#X obj 400 300 sq/rmp/map 0 127 0 50;
+#X obj 652 302 sq/rmp/map 0 127 1 4;
 #X connect 0 0 17 0;
 #X connect 1 0 9 0;
 #X connect 2 0 8 1;
 #X connect 3 0 0 0;
 #X connect 4 0 8 0;
 #X connect 5 0 7 0;
-#X connect 6 0 23 1;
+#X connect 6 0 21 1;
 #X connect 7 0 4 0;
-#X connect 8 0 23 0;
+#X connect 8 0 21 0;
 #X connect 9 0 0 2;
 #X connect 13 0 15 0;
 #X connect 14 0 16 0;
-#X connect 15 0 22 0;
-#X connect 16 0 20 0;
+#X connect 15 0 24 0;
+#X connect 16 0 25 0;
 #X connect 18 0 5 0;
 #X connect 19 0 18 0;
-#X connect 20 0 1 0;
-#X connect 21 0 0 0;
-#X connect 22 0 19 0;
-#X connect 23 0 0 1;
+#X connect 20 0 0 0;
+#X connect 21 0 0 1;
+#X connect 24 0 19 0;
+#X connect 25 0 1 0;

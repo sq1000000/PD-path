@@ -1,4 +1,4 @@
-#N canvas 918 120 1187 959 12;
+#N canvas 918 129 1187 959 12;
 #X floatatom 650 360 5 0 0 0 - - -, f 5;
 #X floatatom 200 360 5 0 0 0 - - -, f 5;
 #X obj 200 200 inlet;
@@ -64,10 +64,10 @@ made with two phasor~ objects;
 #X obj 280 410 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X obj 420 360 - 0.05;
-#X obj 200 300 sq/logic/map 0 127 0 15;
-#X obj 350 330 sq/logic/map 0 127 1 150;
-#X obj 500 300 sq/logic/map 0 127 150 2000;
-#X obj 650 330 sq/logic/map 0 127 0 1;
+#X obj 200 300 sq/rmp/map 0 127 0 15;
+#X obj 350 330 sq/rmp/map 0 127 1 150;
+#X obj 500 300 sq/rmp/map 0 127 150 2000;
+#X obj 650 330 sq/rmp/map 0 127 0 1;
 #X connect 0 0 39 0;
 #X connect 1 0 31 0;
 #X connect 1 0 42 0;

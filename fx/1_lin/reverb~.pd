@@ -1,4 +1,4 @@
-#N canvas 1143 25 1277 1305 10;
+#N canvas 80 69 1240 1346 10;
 #X obj 4428 631 f;
 #X obj 1698 2021 f;
 #X obj 200 200 inlet~;
@@ -29,8 +29,6 @@
 #X text 640 520 Damping level;
 #X text 450 520 Roomize;
 #X obj 800 200 inlet;
-#X obj 600 410 sq/logic/map 0 127 0 1;
-#X obj 800 500 sq/logic/map 0 127 0 0.8;
 #X obj 800 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X text 200 100 reverb is generally one of those things you should
@@ -40,6 +38,8 @@ in one knob \, here's the way to do it;
 #X text 620 850 <- freeze the reverb;
 #X text 620 920 <- run the reverb off and let the dry signal pass through.
 ;
+#X obj 600 410 sq/rmp/map 0 127 0 1;
+#X obj 800 500 sq/rmp/map 0 127 0 0.8;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
@@ -59,9 +59,9 @@ in one knob \, here's the way to do it;
 #X connect 17 0 18 0;
 #X connect 18 0 6 0;
 #X connect 19 0 5 0;
-#X connect 24 0 27 0;
-#X connect 25 0 16 0;
-#X connect 25 0 17 0;
-#X connect 26 0 13 0;
-#X connect 27 0 25 0;
-#X connect 27 0 26 0;
+#X connect 24 0 25 0;
+#X connect 25 0 30 0;
+#X connect 25 0 31 0;
+#X connect 30 0 16 0;
+#X connect 30 0 17 0;
+#X connect 31 0 13 0;

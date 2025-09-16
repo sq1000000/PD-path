@@ -1,4 +1,4 @@
-#N canvas 1179 473 1278 668 12;
+#N canvas 1179 482 1278 668 12;
 #X obj 200 200 inlet~;
 #X obj 300 400 osc~;
 #X obj 200 750 outlet~;
@@ -14,12 +14,12 @@
 ;
 #X text 550 300 <- IDK how this works. All I know is that this range
 is the only range that matters;
-#X obj 1000 380 sq/logic/map 0 64 0 1.6;
 #X text 560 500 <- this is a weird one. 0-1 are audible \, but after
 1 (1-1.6) \, the audio gets harder to hear \, but if you pass the audio
 through some other filter later \, it'll hear it just fine;
 #X text 200 140 try pairing it with the oscilloscope. for some reason
 \, it moves the entire image up or down;
+#X obj 1000 380 sq/rmp/map 0 64 0 1.6;
 #X connect 0 0 2 0;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
@@ -28,5 +28,5 @@ through some other filter later \, it'll hear it just fine;
 #X connect 5 0 2 0;
 #X connect 6 0 5 1;
 #X connect 7 0 1 1;
-#X connect 8 0 11 0;
-#X connect 11 0 4 0;
+#X connect 8 0 13 0;
+#X connect 13 0 4 0;

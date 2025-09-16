@@ -1,4 +1,4 @@
-#N canvas 1281 25 1279 1305 12;
+#N canvas 1281 69 1279 1305 12;
 #X obj 300 910 samphold~;
 #X obj 200 200 inlet~;
 #X obj 200 1290 outlet~;
@@ -51,8 +51,6 @@
 #X obj 200 1100 sq/logic/bypass~;
 #X obj 410 990 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 94.5;
-#X obj 500 270 sq/logic/map 0 127 33 0;
-#X obj 700 300 float 33;
 #X floatatom 410 270 5 0 0 0 - - -, f 5;
 #X text 200 100 this abstraction is HZ based bitcruncher;
 #X text 330 1100 <- there's still some noise at the highest possible
@@ -61,6 +59,8 @@ when the knob is down all the way;
 #X text 200 130 I tried to copy the knob progression from the terminal/HZ
 effect on the OP-1 Field \, but it's not algorithmically linear \,
 so I had to make all the boxes you see below;
+#X obj 500 270 sq/rmp/map 0 127 33 0;
+#X msg 700 300 33;
 #X connect 0 0 47 1;
 #X connect 1 0 0 0;
 #X connect 1 0 47 0;
@@ -68,10 +68,10 @@ so I had to make all the boxes you see below;
 #X connect 5 0 6 0;
 #X connect 6 0 46 0;
 #X connect 8 0 49 0;
-#X connect 8 0 51 0;
+#X connect 8 0 53 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X connect 11 0 50 0;
+#X connect 11 0 54 0;
 #X connect 12 0 10 0;
 #X connect 13 0 10 0;
 #X connect 14 0 10 0;
@@ -142,6 +142,6 @@ so I had to make all the boxes you see below;
 #X connect 46 32 45 0;
 #X connect 47 0 2 0;
 #X connect 48 0 47 2;
-#X connect 49 0 9 0;
-#X connect 50 0 5 0;
-#X connect 51 0 48 0;
+#X connect 49 0 48 0;
+#X connect 53 0 9 0;
+#X connect 54 0 5 0;

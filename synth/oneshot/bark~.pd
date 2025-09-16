@@ -1,4 +1,4 @@
-#N canvas 1320 69 1240 1346 10;
+#N canvas 80 69 1240 1346 10;
 #X obj 300 230 bng 17 250 50 0 empty empty WOOF! 20 8 0 12 #00fc04
 #000000 #000000;
 #X obj 300 260 s \$0-trg-brk;
@@ -154,7 +154,7 @@
 #X obj 920 820 *~ 1;
 #X obj 980 820 *~ 1;
 #X msg 500 320 \$1 \, 0 20 \, \$1 100 20;
-#N canvas 539 405 819 724 hv.tanh 0;
+#N canvas 539 414 819 724 hv.tanh 0;
 #X obj 200 200 inlet~;
 #X obj 200 250 clip~ -3 3;
 #X obj 240 300 *~;

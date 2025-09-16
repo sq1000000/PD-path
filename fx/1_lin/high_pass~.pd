@@ -1,4 +1,4 @@
-#N canvas 1281 25 1279 1305 10;
+#N canvas 1281 69 1279 1305 10;
 #X obj 300 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X obj 4328 831 f;
@@ -8,7 +8,6 @@
 #X obj 200 700 outlet~;
 #X obj 200 200 inlet~;
 #X floatatom 250 540 9 0 0 0 - - -, f 9;
-#X obj 400 230 float 0;
 #X text 600 100 this is a fork of this ->;
 #X obj 200 580 hip~;
 #X text 200 100 this abstraction is a high pass filter. Algorithm taken
@@ -17,11 +16,12 @@ the high pass half.;
 #X obj 300 430 expr 20000 * (pow(2000 \, $f1 / 127) - 1) / (2000 -
 1);
 #X obj 770 100 sq/fx/1_mid/low_n_high_pass~;
-#X connect 0 0 12 0;
+#X msg 400 230 0;
+#X connect 0 0 11 0;
 #X connect 2 0 0 0;
-#X connect 3 0 8 0;
-#X connect 6 0 10 0;
-#X connect 7 0 10 1;
-#X connect 8 0 0 0;
-#X connect 10 0 5 0;
-#X connect 12 0 7 0;
+#X connect 3 0 13 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 1;
+#X connect 9 0 5 0;
+#X connect 11 0 7 0;
+#X connect 13 0 0 0;

@@ -1,4 +1,4 @@
-#N canvas 182 300 1127 878 10;
+#N canvas 1109 200 1127 878 10;
 #X obj 400 540 - 1;
 #X obj 400 600 phasor~;
 #X obj 600 730 wrap~;
@@ -26,7 +26,6 @@
 #X text 430 400 <-- transposition (semitones);
 #X text 640 300 <- -12 is one octave down. +12 is one octave up;
 #X text 440 500 <-- tape speed multiplier;
-#X obj 400 300 sq/logic/map -190.5 317.5 -48 48;
 #X text 700 330 as a little easter egg \, the conversion block accepts
 more than the 0-127 range \, allowing you to go even lower or higher
 ;
@@ -38,7 +37,8 @@ around on githubhttps://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12
 ;
 #X obj 400 570 *~ 20;
 #X obj 200 300 delwrite~ sample 200;
-#X connect 0 0 31 0;
+#X obj 400 300 sq/rmp/map -190.5 317.5 -48 48;
+#X connect 0 0 30 0;
 #X connect 1 0 10 0;
 #X connect 1 0 13 0;
 #X connect 1 0 16 0;
@@ -59,10 +59,10 @@ around on githubhttps://github.com/mgsx-dev/gdx-pd-demo/blob/05862d3b67ebc4c12
 #X connect 15 0 12 0;
 #X connect 16 0 2 0;
 #X connect 17 0 0 0;
-#X connect 18 0 32 0;
-#X connect 20 0 27 0;
+#X connect 18 0 31 0;
+#X connect 20 0 32 0;
 #X connect 21 0 23 0;
 #X connect 22 0 17 0;
 #X connect 23 0 22 0;
-#X connect 27 0 21 0;
-#X connect 31 0 1 0;
+#X connect 30 0 1 0;
+#X connect 32 0 21 0;

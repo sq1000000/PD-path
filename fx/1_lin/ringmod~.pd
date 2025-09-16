@@ -1,4 +1,4 @@
-#N canvas 642 381 1279 665 10;
+#N canvas 851 380 1279 665 10;
 #X obj 4628 731 f;
 #X obj 1898 2121 f;
 #X obj 200 200 inlet~;
@@ -6,20 +6,20 @@
 #X obj 200 400 *~;
 #X obj 300 350 osc~;
 #X obj 300 290 hsl 128 15 0 70 0 0 empty empty Freq -2 -8 0 10 #fcfcfc
-#000000 #000000 12700 1;
+#000000 #000000 0 1;
 #X floatatom 300 320 5 0 0 0 - - -, f 5;
 #X obj 300 200 inlet;
-#X obj 300 250 sq/logic/map 0 127 0 70;
 #X text 200 100 this abstraction isn't quite ready yet. 0 SHOULD mean
 no effect is happening \, but it's still a little bit of something.
 so maybe fix that later. perhaps by disabling the osc~ while the slider
 is at 0;
 #X text 500 300 tutorial: https://www.youtube.com/watch?v=U2j8eyYRPcQ
 ;
+#X obj 300 250 sq/rmp/map 0 127 0 70;
 #X connect 2 0 4 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 1;
 #X connect 6 0 7 0;
 #X connect 7 0 5 0;
-#X connect 8 0 9 0;
-#X connect 9 0 6 0;
+#X connect 8 0 11 0;
+#X connect 11 0 6 0;

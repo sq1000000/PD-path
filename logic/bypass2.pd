@@ -1,57 +1,52 @@
-#N canvas 1281 28 1279 1343 10;
-#X obj 1898 21 f;
-#X obj 740 -3110 inlet;
-#X floatatom 660 -2800 5 0 0 0 - - -, f 5;
-#X obj 9095 -3242 f;
-#X obj 8571 -1447 f;
-#X obj 3631 923 f;
-#X obj 740 -3080 hradio 15 0 0 2 empty empty empty 0 -8 0 10 #fcfcfc
-#000000 #000000 1;
-#X msg 660 -2870 1;
-#X msg 760 -2870 0;
-#X obj 780 -2970 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#N canvas 80 69 2480 1346 10;
+#X obj 600 200 inlet;
+#X floatatom 600 500 5 0 0 0 - - -, f 5;
+#X obj 600 250 hradio 15 0 0 2 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X msg 600 400 1;
+#X msg 640 400 0;
+#X obj 640 350 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X obj 740 -2970 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#X obj 600 350 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X text 200 -3060 there's probably a better vanilla way to do this
+#X text 200 140 there's probably a better vanilla way to do this;
+#X obj 600 300 route 0;
+#X obj 200 200 inlet;
+#X obj 400 200 inlet;
+#X obj 200 900 outlet;
+#X obj 200 600 sq/if/equal_to;
+#X floatatom 300 440 5 0 0 0 - - -, f 5;
+#X floatatom 200 800 5 0 0 0 - - -, f 5;
+#X obj 400 600 sq/if/equal_to;
+#X floatatom 500 440 5 0 0 0 - - -, f 5;
+#X floatatom 400 700 5 0 0 0 - - -, f 5;
+#X floatatom 200 700 5 0 0 0 - - -, f 5;
+#X text 200 100 use a toggle box to toggle between two number sources
 ;
-#X obj 740 -3050 route 0;
-#X obj 200 -3000 inlet;
-#X obj 400 -3000 inlet;
-#X obj 200 -2200 outlet;
-#X obj 200 -2620 sq/if/equal_to;
-#X floatatom 370 -2750 5 0 0 0 - - -, f 5;
-#X floatatom 200 -2300 5 0 0 0 - - -, f 5;
-#X obj 403 -2623 sq/if/equal_to;
-#X floatatom 560 -2720 5 0 0 0 - - -, f 5;
-#X floatatom 400 -2520 5 0 0 0 - - -, f 5;
-#X floatatom 200 -2520 5 0 0 0 - - -, f 5;
-#X text 200 -3100 use a toggle box to toggle between two number sources
-;
-#X obj 500 -2820 loadbang;
-#X obj 500 -2795 float 1;
-#X obj 300 -2805 loadbang;
-#X obj 300 -2780 float 0;
-#X connect 1 0 6 0;
-#X connect 2 0 16 1;
-#X connect 2 0 19 1;
-#X connect 6 0 12 0;
-#X connect 7 0 2 0;
-#X connect 8 0 2 0;
-#X connect 9 0 8 0;
-#X connect 10 0 7 0;
-#X connect 12 0 10 0;
-#X connect 12 1 9 0;
-#X connect 13 0 16 0;
-#X connect 14 0 19 0;
-#X connect 16 0 22 0;
-#X connect 17 0 16 2;
-#X connect 18 0 15 0;
-#X connect 19 0 21 0;
-#X connect 20 0 19 2;
-#X connect 21 0 18 0;
-#X connect 22 0 18 0;
-#X connect 24 0 25 0;
-#X connect 25 0 20 0;
-#X connect 26 0 27 0;
-#X connect 27 0 17 0;
+#X obj 500 400 loadbang;
+#X obj 300 400 loadbang;
+#X msg 300 420 0;
+#X msg 500 420 1;
+#X connect 0 0 2 0;
+#X connect 1 0 12 1;
+#X connect 1 0 15 1;
+#X connect 2 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 8 0 6 0;
+#X connect 8 1 5 0;
+#X connect 9 0 12 0;
+#X connect 10 0 15 0;
+#X connect 12 0 18 0;
+#X connect 13 0 12 2;
+#X connect 14 0 11 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 2;
+#X connect 17 0 14 0;
+#X connect 18 0 14 0;
+#X connect 20 0 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 13 0;
+#X connect 23 0 16 0;

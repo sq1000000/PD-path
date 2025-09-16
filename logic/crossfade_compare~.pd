@@ -1,4 +1,4 @@
-#N canvas 643 402 1278 626 12;
+#N canvas 1320 69 1240 1346 12;
 #X obj 200 200 inlet~;
 #X obj 300 200 inlet~;
 #X obj 400 200 inlet;
@@ -6,15 +6,15 @@
 #X obj 200 400 *~ 1;
 #X obj 200 500 outlet~;
 #X floatatom 400 340 5 0 0 0 - - -, f 5;
-#X obj 400 300 sq/logic/map 0 127 1 -1;
 #X text 200 100 move the slider to compare between two audio streams
 with this abstraction;
 #X text 700 100 this abstraction is pretty similar to the crossfader
 object that I made (sq/logic/crossfade~);
+#X obj 400 300 sq/rmp/map 0 127 1 -1;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
-#X connect 2 0 7 0;
+#X connect 2 0 9 0;
 #X connect 3 0 5 0;
 #X connect 4 0 5 0;
 #X connect 6 0 3 1;
-#X connect 7 0 6 0;
+#X connect 9 0 6 0;

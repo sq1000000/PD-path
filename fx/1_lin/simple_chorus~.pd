@@ -1,4 +1,4 @@
-#N canvas 137 69 1119 1170 10;
+#N canvas 137 78 1119 1170 10;
 #X obj 600 600 phasor~;
 #X obj 500 730 cos~;
 #X obj 500 760 +~ 1;
@@ -26,9 +26,9 @@
 #X coords 0 128 3 0 100 70 1;
 #X restore 400 500 graph;
 #X obj 800 500 hsl 128 15 0.5 90 1 1 empty empty depth -2 -8 0 10 #fcfcfc
-#000000 #000000 10604 1;
+#000000 #000000 0 1;
 #X obj 600 500 hsl 128 15 0.05 1 1 1 speed empty speed -2 -8 0 10 #fcfcfc
-#000000 #000000 2000 1;
+#000000 #000000 0 1;
 #X obj 220 250 delwrite~ CHORUS 10000;
 #X obj 200 200 inlet~;
 #X floatatom 800 530 5 0 0 0 - - -, f 5;
@@ -36,11 +36,9 @@
 #X obj 400 300 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X floatatom 400 323 5 0 0 0 - - -, f 5;
-#X obj 600 400 sq/logic/map 0 127 0.005 0.1;
-#X obj 800 400 sq/logic/map 0 127 0.5 90;
 #X obj 200 1200 sq/logic/bypass~;
 #X obj 300 900 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 53.5;
+#000000 0 7.5;
 #X obj 200 1300 outlet~;
 #X obj 400 200 inlet;
 #X obj 500 700 +~ 0;
@@ -51,7 +49,9 @@ on this one pd forum;
 #X text 330 1200 <- I don't like the harsh transition when moving to
 the bypass filter. but I can't find a way to make the chorus thing
 act the same as the input signal ) \; ;
-#X connect 0 0 36 0;
+#X obj 600 400 sq/rmp/map 0 127 0.005 0.1;
+#X obj 800 400 sq/rmp/map 0 127 0.5 90;
+#X connect 0 0 34 0;
 #X connect 0 0 17 0;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
@@ -71,24 +71,24 @@ act the same as the input signal ) \; ;
 #X connect 15 0 19 0;
 #X connect 16 0 20 0;
 #X connect 17 0 5 0;
-#X connect 18 0 32 1;
-#X connect 19 0 32 1;
-#X connect 20 0 32 1;
+#X connect 18 0 30 1;
+#X connect 19 0 30 1;
+#X connect 20 0 30 1;
 #X connect 22 0 26 0;
 #X connect 23 0 27 0;
 #X connect 25 0 24 0;
-#X connect 25 0 32 0;
+#X connect 25 0 30 0;
 #X connect 26 0 4 1;
 #X connect 26 0 8 1;
 #X connect 26 0 12 1;
 #X connect 27 0 0 0;
 #X connect 28 0 29 0;
-#X connect 29 0 30 0;
 #X connect 29 0 31 0;
-#X connect 29 0 33 0;
-#X connect 30 0 23 0;
-#X connect 31 0 22 0;
-#X connect 32 0 34 0;
-#X connect 33 0 32 2;
-#X connect 35 0 28 0;
-#X connect 36 0 1 0;
+#X connect 29 0 38 0;
+#X connect 29 0 39 0;
+#X connect 30 0 32 0;
+#X connect 31 0 30 2;
+#X connect 33 0 28 0;
+#X connect 34 0 1 0;
+#X connect 38 0 23 0;
+#X connect 39 0 22 0;

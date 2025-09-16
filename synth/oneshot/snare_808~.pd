@@ -1,4 +1,4 @@
-#N canvas 1198 382 965 730 12;
+#N canvas 375 455 965 730 12;
 #X obj 200 200 inlet;
 #X obj 200 600 outlet~;
 #X msg 200 300 400 4 \, 200 10 4;
@@ -10,15 +10,15 @@
 #X msg 600 300 0.4 4 \, 0 300 4;
 #X obj 200 500 *~;
 #X obj 400 380 pow~ 4;
-#X obj 500 400 noise~;
+#X obj 500 380 noise~;
 #X obj 500 500 *~;
 #X obj 600 380 pow~ 1.6;
 #X text 200 100 tutorial: https://www.youtube.com/watch?v=mfoh0ucl238
 ;
 #X obj 200 550 *~ 0.6;
-#X connect 0 0 2 0;
-#X connect 0 0 7 0;
-#X connect 0 0 8 0;
+#X obj 200 250 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X connect 0 0 16 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 9 0;
@@ -32,3 +32,6 @@
 #X connect 12 0 15 0;
 #X connect 13 0 12 1;
 #X connect 15 0 1 0;
+#X connect 16 0 8 0;
+#X connect 16 0 7 0;
+#X connect 16 0 2 0;

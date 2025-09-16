@@ -1,4 +1,4 @@
-#N canvas 546 425 935 818 12;
+#N canvas 546 434 935 818 12;
 #X obj 100 500 noise~;
 #X obj 200 600 bp~ 300 4;
 #X obj 300 500 vline~;
@@ -25,7 +25,9 @@ particular trademarked chartacter;
 #X obj 500 270 sq/rmp/map 0 127 2000 3000;
 #X floatatom 500 300 5 0 0 0 - - -, f 5;
 #X obj 500 240 hsl 128 15 0 127 0 0 empty empty Speed\\\ (mslider)
--2 -8 0 10 #fcfcfc #000000 #000000 5900 1;
+-2 -8 0 10 #fcfcfc #000000 #000000 6350 1;
+#X obj 400 200 loadbang;
+#X msg 400 229 63.5;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;
@@ -52,3 +54,5 @@ particular trademarked chartacter;
 #X connect 21 0 22 0;
 #X connect 22 0 14 1;
 #X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;
