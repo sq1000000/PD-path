@@ -1,4 +1,4 @@
-#N canvas 80 87 1265 1288 12;
+#N canvas 1320 69 1240 1346 12;
 #X obj 600 370 bng 30 250 50 0 empty empty Start_Recording 0 -6 0 10
 #00cc04 #f8fc00 #00cc04;
 #X obj 500 370 bng 30 250 50 0 empty empty Stop_Recording 0 -6 0 10
@@ -82,9 +82,9 @@ named with the current time. The audio outlets are only there as passthroughs
 #X text 700 200 based off of this patch: https://github.com/hellocatfood/neonplastic/blob/7bbde7830f744e6fe2f98a0cc5c1543712c4dec8/nplib/abs.record.ssimple.pd#L14
 , f 61;
 #X obj 600 410 t b b b;
-#X msg 600 700 open -bytes 4 \$1;
-#X text 610 670 create 32-bit floating-point soundfile:;
 #X text 530 250 <- toggle recording;
+#X text 610 670 create 16-bit floating-point soundfile:;
+#X msg 600 700 open -bytes 2 \$1;
 #X connect 0 0 25 0;
 #X connect 1 0 3 0;
 #X connect 1 0 20 0;
@@ -94,7 +94,7 @@ named with the current time. The audio outlets are only there as passthroughs
 #X connect 4 0 18 0;
 #X connect 5 0 6 1;
 #X connect 5 0 19 0;
-#X connect 7 0 26 0;
+#X connect 7 0 28 0;
 #X connect 8 0 9 0;
 #X connect 9 0 1 0;
 #X connect 9 1 0 0;
@@ -109,4 +109,4 @@ named with the current time. The audio outlets are only there as passthroughs
 #X connect 25 0 2 0;
 #X connect 25 1 11 0;
 #X connect 25 2 7 0;
-#X connect 26 0 6 0;
+#X connect 28 0 6 0;
