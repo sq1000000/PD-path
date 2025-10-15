@@ -1,4 +1,4 @@
-#N canvas 680 72 1279 1343 12;
+#N canvas 1138 188 1279 1343 12;
 #X floatatom 1000 460 5 0 0 0 - - -, f 5;
 #X obj 1000 430 / 2;
 #X obj 600 500 phasor~;
@@ -30,7 +30,7 @@
 #X obj 240 250 delwrite~ \$0-del \$1;
 #X obj 400 200 inlet;
 #X obj 400 400 tgl 17 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 127;
+#000000 1 1;
 #X msg 950 260 200;
 #X obj 200 1180 outlet~;
 #X obj 200 1100 sq/logic/bypass~;
@@ -43,7 +43,6 @@
 found that 200 is usually the ideal size;
 #X text 200 100 this abstraction applies a "reverse" effect to incoming
 audio \, but only when the inlet box is toggled;
-#X obj 1042 770 sq/synth/waveforms/saw~;
 #X floatatom 1000 260 5 0 0 0 - - -, f 5;
 #X obj 1000 230 float \$1;
 #X obj 1000 200 loadbang;
@@ -79,15 +78,15 @@ audio \, but only when the inlet box is toggled;
 #X connect 25 0 1 0;
 #X connect 26 0 7 0;
 #X connect 26 0 6 0;
-#X connect 27 0 45 0;
+#X connect 27 0 44 0;
 #X connect 29 0 30 0;
 #X connect 30 0 33 2;
 #X connect 31 0 27 0;
 #X connect 33 0 32 0;
 #X connect 34 0 8 1;
 #X connect 35 0 5 0;
-#X connect 41 0 44 0;
+#X connect 40 0 43 0;
+#X connect 41 0 40 0;
 #X connect 42 0 41 0;
-#X connect 43 0 42 0;
-#X connect 43 0 31 0;
-#X connect 44 0 27 0;
+#X connect 42 0 31 0;
+#X connect 43 0 27 0;
