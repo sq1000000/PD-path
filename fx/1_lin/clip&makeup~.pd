@@ -1,0 +1,37 @@
+#N canvas 351 69 1240 1346 10;
+#X obj 200 200 inlet~;
+#X obj 200 1000 outlet~;
+#X obj 400 200 inlet;
+#X obj 400 700 clip~;
+#X floatatom 500 500 5 0 0 0 - - -, f 5;
+#X floatatom 700 500 5 0 0 0 - - -, f 5;
+#X obj 400 260 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 1000 1600 f;
+#X obj 500 400 sq/rmp/map 0 127 -1 0;
+#X obj 700 400 sq/rmp/map 0 127 1 0;
+#X floatatom 400 340 5 0 0 0 - - -, f 5;
+#X obj 200 900 sq/logic/bypass~;
+#X obj 400 800 expr~ $v1 * pow(1 - ($f2/127) \, -1);
+#X text 630 800 <- volume compensation;
+#X text 320 900 <- bypass because clip~ has no passive mode;
+#X obj 400 300 sq/rmp/map 0 127 0 126;
+#X text 200 100 this abstraction clips the incoming audio \, then amplifies
+the volume to make up for the lost signal;
+#X text 220 140 can lead to volume spikes. use carefully;
+#X connect 0 0 3 0;
+#X connect 0 0 11 0;
+#X connect 2 0 6 0;
+#X connect 3 0 12 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 2;
+#X connect 6 0 15 0;
+#X connect 8 0 4 0;
+#X connect 9 0 5 0;
+#X connect 10 0 8 0;
+#X connect 10 0 9 0;
+#X connect 10 0 11 2;
+#X connect 10 0 12 1;
+#X connect 11 0 1 0;
+#X connect 12 0 11 1;
+#X connect 15 0 10 0;
